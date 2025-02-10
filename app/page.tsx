@@ -4,6 +4,7 @@ import AboutSection from "../components/AboutSection";
 import OfferSection from "../components/OfferSection";
 import ContactSection from "../components/ContactSection";
 import Footer from "../components/Footer";
+import AlacerCo from "../components/AlacerCo";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <Navbar />
       <div className="max-w-[100%] mx-auto px-8">
         <Hero />
+        <AlacerCo />
         <AboutSection />
         <OfferSection />
         <ContactSection />

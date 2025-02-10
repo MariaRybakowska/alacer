@@ -11,7 +11,7 @@ export default function ContactSection() {
             zapewniająca spersonalizowane podejście.
           </p>
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-[74px]">
-            <form className="flex-grow">
+            <form className="flex-grow max-w-[640px]">
               <input
                 className="w-full bg-[#ECE4DC] p-5 mb-6"
                 placeholder="Imię i Nazwisko"
@@ -28,22 +28,22 @@ export default function ContactSection() {
                 Wyślij
               </button>
             </form>
-            <div>
-              <div className="mb-9">
-                <p className="text-[#34302D] text-base mb-1">telefon</p>
-                <p className="text-[#4F382B] text-2xl font-bold">
+            <div className="lg:w-[300px] shrink-0">
+              <div className="mb-12">
+                <p className="text-[#a5a2a0] text-base mb-1">telefon</p>
+                <p className="text-[#4F382B] text-xl font-bold">
                   +48 888 88 88 88
                 </p>
               </div>
               <div className="mb-9">
-                <p className="text-[#34302D] text-base mb-1">mail</p>
-                <p className="text-[#4F382B] text-2xl font-bold">
+                <p className="text-[#a5a2a0] text-base mb-1">mail</p>
+                <p className="text-[#4F382B] text-xl font-bold">
                   alacer@alacer.com
                 </p>
               </div>
               <div>
-                <p className="text-[#34302D] text-base mb-1">adres</p>
-                <p className="text-[#4F382B] text-2xl font-bold leading-tight">
+                <p className="text-[#a5a2a0] text-base mb-1">adres</p>
+                <p className="text-[#4F382B] text-xl font-bold leading-tight">
                   ul. Malinowa 13
                   <br />
                   60-185 Skórzewo
