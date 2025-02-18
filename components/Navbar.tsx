@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
+import Lenis from "@studio-freight/lenis";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -67,8 +68,17 @@ export default function Navbar() {
               O nas
             </a>
             <a
-              href="#"
-              className="transition-opacity duration-200 hover:opacity-70 focus:outline-none focus:underline"
+              href="#contact"
+              className="hover:opacity-70 transition-opacity duration-200 focus:outline-none focus:underline"
+              onClick={(e) => {
+                e.preventDefault();
+                if (window.lenis) {
+                  window.lenis.scrollTo("#contact", {
+                    offset: -70,
+                    duration: 1.5,
+                  });
+                }
+              }}
             >
               Kontakt
             </a>
@@ -132,9 +142,18 @@ export default function Navbar() {
                 O nasa
               </a>
               <a
-                href="#"
+                href="#contact"
                 className="hover:opacity-70 transition-opacity duration-200 focus:outline-none focus:underline"
-                onClick={closeMenu}
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (window.lenis) {
+                    window.lenis.scrollTo("#contact", {
+                      offset: -120,
+                      duration: 1.5,
+                    });
+                    closeMenu();
+                  }
+                }}
               >
                 Kontakt
               </a>
