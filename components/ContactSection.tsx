@@ -85,7 +85,7 @@ export default function ContactSection() {
               <div className="mb-9">
                 <p className="text-[#a5a2a0] text-base mb-1">mail</p>
                 <p className="text-[#4F382B] text-xl font-bold">
-                  anna.rybakowska@alacer.com
+                  anna.rybakowska@alacer.pl
                 </p>
               </div>
               <div>

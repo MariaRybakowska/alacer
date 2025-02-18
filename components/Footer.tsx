@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -10,11 +10,10 @@ export default function Footer() {
           <p>Imprint</p>
         </div>
         <div>
-          <p>info@alacer.pl</p>
-          <p>+48 888 888 888</p>
+          <p>anna.rybakowska@alacer.pl</p>
+          <p>+48 884 921 333</p>
         </div>
       </div>
     </footer>
-  )
+  );
 }
-
