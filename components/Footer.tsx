@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[#4F382B] py-6 mt-24 flex justify-between items-center text-sm text-[#34302D]">
-      <Image src="/logo.png" alt="Alacer Logo" width={148} height={44} />
+    <footer className="bg-[#FFFCF5] border-t border-[#4F382B] px-8 py-6 flex justify-between items-center text-sm text-[#34302D]">
+      <Image src="/logo.png" alt="Alacer Logo" width={80} height={44} />
       <div className="flex gap-11">
         <div>
           <p>Privacy policy</p>
