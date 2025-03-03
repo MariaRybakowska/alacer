@@ -12,7 +12,7 @@ export default function OfferSection() {
             pozwala nam to zespołowo rozwiązać nawet najtrudniejsze problemy i
             przeskoczyć ograniczenia z dużą uwagą dla każdego aspektu zadania
           </p>
-          <div className="text-[60px] text-[#4F382B] font-light leading-tight">
+          <div className="text-[28px] lg:text-[60px] text-[#4F382B] font-light leading-tight">
             <p>
               <span className="text-lg">01</span> Konsultacje projektowe
             </p>

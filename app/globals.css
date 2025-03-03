@@ -95,3 +95,21 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.times-new-roman {
+  font-family: "Didot", Times, serif;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 2.5s infinite;
+}

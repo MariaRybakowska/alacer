@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function AlacerCo() {
   return (
-    <section className="border-t border-[#4F382B] py-6 mt-24">
+    <section id="alacer-co" className="border-t border-[#4F382B] py-6 mt-24">
       <div className="xl:grid xl:grid-cols-12 xl:gap-8">
         <h2 className="text-3xl text-[#917E6E] uppercase mb-6 xl:mb-0 xl:col-span-3">
           Alacer co.
@@ -25,15 +25,15 @@ export default function AlacerCo() {
                   <h3 className="text-[#4F382B] text-xl font-medium">
                     ALACER PROJEKTY
                   </h3>
-                  <p className="text-[#4F382B] text-base mt-1 text-left">
+                  {/* <p className="text-[#4F382B] text-base mt-1 text-left">
                     Kompleksowe projekty akustyczne i wykonczeniowe na terenie
                     całej Polski.
-                  </p>
+                  </p> */}
                 </div>
               </div>
               <Link
                 href="/projekty"
-                className="border border-[#34302D] rounded px-8 py-4 text-lg text-[#4F382B] hover:bg-[#34302D] hover:text-white transition-colors text-center"
+                className="border border-[#34302D] rounded px-8 py-2 text-lg text-[#4F382B] hover:bg-[#34302D] hover:text-white transition-colors text-center"
               >
                 Zobacz projekty
               </Link>
@@ -53,15 +53,15 @@ export default function AlacerCo() {
                   <h3 className="text-[#4F382B] text-xl font-medium">
                     ALACER PRODUKTY
                   </h3>
-                  <p className="text-[#4F382B] text-base mt-1 text-left">
+                  {/* <p className="text-[#4F382B] text-base mt-1 text-left">
                     Produkty akustycznych i rozwiązań dźwiękochłonnych
                     najwyższej jakości dla indywidualnych klientów.
-                  </p>
+                  </p> */}
                 </div>
               </div>
               <Link
                 href="/produkty"
-                className="border border-[#34302D] rounded px-8 py-4 text-lg text-[#4F382B] hover:bg-[#34302D] hover:text-white transition-colors text-center"
+                className="border border-[#34302D] rounded px-8 py-2 text-lg text-[#4F382B] hover:bg-[#34302D] hover:text-white transition-colors text-center"
               >
                 Zobacz produkty
               </Link>
