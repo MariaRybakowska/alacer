@@ -3,17 +3,15 @@ import Link from "next/link";
 type CardProps = {
   image: string;
   title: string;
-  location: string;
-  year: string;
   slug: string;
   type: "project" | "product";
+  location?: string;
+  year?: string;
 };
 
 export default function ProjectProductCard({
   image,
   title,
-  location,
-  year,
   slug,
   type,
 }: CardProps) {
@@ -31,10 +29,6 @@ export default function ProjectProductCard({
       <h3 className="font-bold text-md leading-none group-hover:text-[#917E6E] transition-colors">
         {title}
       </h3>
-      <div className="flex justify-between text-md text-[#4F382B]">
-        <span>{location}</span>
-        <span>{year}</span>
-      </div>
     </Link>
   );
 }

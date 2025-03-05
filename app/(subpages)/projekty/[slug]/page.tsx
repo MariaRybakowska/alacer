@@ -1,3 +1,7 @@
+"use client";
+import { ArrowLeft } from "lucide-react";
+import { useRouter } from "next/navigation";
+
 type Props = {
   params: {
     slug: string;
@@ -5,11 +9,13 @@ type Props = {
 };
 
 export default function ProjectPage({ params }: Props) {
+  const router = useRouter();
+
   return (
     <main className="bg-[#FFFCF5] min-h-screen px-8 pt-[70px]">
       <div className="max-w-[100%] mx-auto">
-        <h1 className="text-3xl text-[#917E6E] uppercase mb-12">
-          Nazwa projektu
+        <h1 className="text-3xl md:text-5xl text-[#917E6E] uppercase mt-12 mb-12">
+          <span className="text-sm md:text-base">Alacer</span> nazwa projektu
         </h1>
 
         <div className="grid xl:grid-cols-12 xl:gap-8">

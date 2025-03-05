@@ -4,8 +4,8 @@ export default function Projects() {
   return (
     <main className="bg-[#FFFCF5] min-h-screen px-8 pt-[70px] pb-24">
       <div className="max-w-[100%] mx-auto">
-        <h1 className="text-3xl text-[#917E6E] uppercase mb-12">
-          Alacer projekty
+        <h1 className="text-3xl md:text-5xl text-[#917E6E] uppercase mt-12 mb-12">
+          <span className="text-sm md:text-base">Alacer</span> projekty
         </h1>
 
         {/* Two column text section */}

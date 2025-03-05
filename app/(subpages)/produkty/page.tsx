@@ -4,8 +4,8 @@ export default function Products() {
   return (
     <main className="bg-[#FFFCF5] min-h-screen px-8 pt-[70px] pb-24">
       <div className="max-w-[100%] mx-auto">
-        <h1 className="text-3xl text-[#917E6E] uppercase mb-12">
-          Alacer produkty
+        <h1 className="text-3xl md:text-5xl text-[#917E6E] uppercase mt-12 mb-12">
+          <span className="text-sm md:text-base">Alacer</span> produkty
         </h1>
 
         {/* Two column text section */}
@@ -24,35 +24,27 @@ export default function Products() {
         {/* Products grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <ProjectProductCard
-            image="/path-to-product1.jpg"
-            title="Product Name 1"
-            location="Collection Name"
-            year="2023"
-            slug="product-name-1"
+            image="/produkty/fornirowane.jpg"
+            title="Panel fornirowany"
+            slug="panel-fornirowany"
             type="product"
           />
           <ProjectProductCard
-            image="/path-to-product1.jpg"
-            title="Product Name 1"
-            location="Collection Name"
-            year="2023"
-            slug="product-name-1"
+            image="/produkty/laminowane2.jpg"
+            title="Panel laminowany"
+            slug="panel-laminowany"
             type="product"
           />
           <ProjectProductCard
-            image="/path-to-product1.jpg"
-            title="Product Name 1"
-            location="Collection Name"
-            year="2023"
-            slug="product-name-1"
+            image="/produkty/metalowe.jpeg"
+            title="Panel metalowy"
+            slug="panel-metalowy"
             type="product"
           />
           <ProjectProductCard
-            image="/path-to-product1.jpg"
-            title="Product Name 1"
-            location="Collection Name"
-            year="2023"
-            slug="product-name-1"
+            image="/produkty/intarsja.jpg"
+            title="Intarsja"
+            slug="intarsja"
             type="product"
           />
         </div>
