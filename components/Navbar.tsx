@@ -74,19 +74,39 @@ export default function Navbar() {
               </a>
 
               {/* Dropdown menu */}
-              <div className="absolute hidden group-hover:block top-full left-0 bg-white shadow-lg rounded-md py-2 min-w-[160px]">
-                <a
+              <div className="absolute hidden group-hover:block top-full left-0 mt-2 bg-white/95 backdrop-blur-sm border border-[#4F382B]/10 min-w-[200px]">
+                <Link
                   href="/projekty"
-                  className="block px-4 py-2 transition-colors duration-200 hover:bg-gray-100 focus:outline-none focus:bg-gray-200"
+                  className="block px-6 py-4 text-[#4F382B] hover:bg-[#4F382B]/5 transition-colors duration-300 group/item"
                 >
-                  Alacer projekty
-                </a>
-                <a
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <span className="block text-xs text-[#917E6E] mb-1">
+                        01
+                      </span>
+                      <span className="block">Alacer projekty</span>
+                    </div>
+                    <span className="text-[#4F382B]/60 opacity-0 -translate-x-2 transition-all duration-300 group-hover/item:opacity-100 group-hover/item:translate-x-0">
+                      →
+                    </span>
+                  </div>
+                </Link>
+                <Link
                   href="/produkty"
-                  className="block px-4 py-2 transition-colors duration-200 hover:bg-gray-100 focus:outline-none focus:bg-gray-200"
+                  className="block px-6 py-4 text-[#4F382B] hover:bg-[#4F382B]/5 transition-colors duration-300 group/item"
                 >
-                  Alacer produkty
-                </a>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <span className="block text-xs text-[#917E6E] mb-1">
+                        02
+                      </span>
+                      <span className="block">Alacer produkty</span>
+                    </div>
+                    <span className="text-[#4F382B]/60 opacity-0 -translate-x-2 transition-all duration-300 group-hover/item:opacity-100 group-hover/item:translate-x-0">
+                      →
+                    </span>
+                  </div>
+                </Link>
               </div>
             </div>
 

@@ -58,8 +58,54 @@ module.exports = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      keyframes: {
+        "wave-1": {
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.1)" },
+        },
+        "wave-2": {
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.15)" },
+        },
+        "wave-3": {
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.2)" },
+        },
+        "wave-4": {
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.25)" },
+        },
+        "wave-out-1": {
+          "0%": { strokeDasharray: "0 100", opacity: 0 },
+          "100%": { strokeDasharray: "100 100", opacity: 1 },
+        },
+        "wave-out-2": {
+          "0%": { strokeDasharray: "0 100", opacity: 0 },
+          "25%": { strokeDasharray: "0 100", opacity: 0 },
+          "100%": { strokeDasharray: "100 100", opacity: 1 },
+        },
+        "wave-out-3": {
+          "0%": { strokeDasharray: "0 100", opacity: 0 },
+          "50%": { strokeDasharray: "0 100", opacity: 0 },
+          "100%": { strokeDasharray: "100 100", opacity: 1 },
+        },
+        "wave-out-4": {
+          "0%": { strokeDasharray: "0 100", opacity: 0 },
+          "75%": { strokeDasharray: "0 100", opacity: 0 },
+          "100%": { strokeDasharray: "100 100", opacity: 1 },
+        },
+      },
+      animation: {
+        "wave-1": "wave-1 4s ease-in-out infinite",
+        "wave-2": "wave-2 4s ease-in-out infinite 0.2s",
+        "wave-3": "wave-3 4s ease-in-out infinite 0.4s",
+        "wave-4": "wave-4 4s ease-in-out infinite 0.6s",
+        "wave-out-1": "wave-out-1 3s ease-out infinite",
+        "wave-out-2": "wave-out-2 3s ease-out infinite",
+        "wave-out-3": "wave-out-3 3s ease-out infinite",
+        "wave-out-4": "wave-out-4 3s ease-out infinite",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
-
+};

@@ -10,62 +10,60 @@ export default function AlacerCo() {
           Alacer co.
         </h2>
         <div className="xl:col-span-9 xl:pl-8">
-          <div className="flex flex-col md:flex-row gap-6">
+          <div className="flex flex-col md:flex-row gap-12">
             {/* Projects Card */}
-            <div className="flex-1 flex flex-col">
-              <div className="bg-[#BFADA1] p-8 mb-4 h-full">
-                <div className="flex flex-col  w-[250px] mx-auto">
+            <Link href="/projekty" className="flex-1 group">
+              <div className="shadow-[0_4px_20px_rgba(0,0,0,0.05)] transition-all duration-500 group-hover:shadow-[0_4px_30px_rgba(0,0,0,0.12)]">
+                <div className="relative aspect-square overflow-hidden">
                   <Image
-                    src="/main-page/alacer-projekty.png"
+                    src="/main-page/projekt.svg"
                     alt="Projekty"
-                    width={250}
-                    height={120}
-                    className="mb-6"
+                    fill
+                    className="object-contain transition-transform duration-500 group-hover:scale-105"
                   />
-                  <h3 className="text-[#4F382B] text-xl font-medium">
-                    ALACER PROJEKTY
-                  </h3>
-                  {/* <p className="text-[#4F382B] text-base mt-1 text-left">
-                    Kompleksowe projekty akustyczne i wykonczeniowe na terenie
-                    całej Polski.
-                  </p> */}
+                </div>
+                <div className="flex justify-between items-center p-8">
+                  <div>
+                    <h3 className="font-satoshi text-[#4F382B] text-5xl font-medium mb-4">
+                      01
+                    </h3>
+                    <p className="text-[#4F382B]/80 text-xl font-light relative after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-px after:bg-[#4F382B]/40 after:transition-all after:duration-300 group-hover:after:w-full">
+                      Alacer Projekty
+                    </p>
+                  </div>
+                  <span className="text-[#4F382B]/60 transition-transform group-hover:translate-x-2">
+                    →
+                  </span>
                 </div>
               </div>
-              <Link
-                href="/projekty"
-                className="border border-[#34302D] rounded px-8 py-2 text-lg text-[#4F382B] hover:bg-[#34302D] hover:text-white transition-colors text-center"
-              >
-                Zobacz projekty
-              </Link>
-            </div>
+            </Link>
 
             {/* Products Card */}
-            <div className="flex-1 flex flex-col">
-              <div className="bg-[#ECE4DC] p-8 mb-4 h-full">
-                <div className="flex flex-col  w-[250px] mx-auto">
+            <Link href="/produkty" className="flex-1 group">
+              <div className="shadow-[0_4px_20px_rgba(0,0,0,0.05)] transition-all duration-500 group-hover:shadow-[0_4px_30px_rgba(0,0,0,0.12)]">
+                <div className="relative aspect-square overflow-hidden">
                   <Image
-                    src="/main-page/alacer-produkty.png"
+                    src="/main-page/produkt.svg"
                     alt="Produkty"
-                    width={250}
-                    height={120}
-                    className="mb-6"
+                    fill
+                    className="object-contain transition-transform duration-500 group-hover:scale-105"
                   />
-                  <h3 className="text-[#4F382B] text-xl font-medium">
-                    ALACER PRODUKTY
-                  </h3>
-                  {/* <p className="text-[#4F382B] text-base mt-1 text-left">
-                    Produkty akustycznych i rozwiązań dźwiękochłonnych
-                    najwyższej jakości dla indywidualnych klientów.
-                  </p> */}
+                </div>
+                <div className="flex justify-between items-center p-8">
+                  <div>
+                    <h3 className="font-satoshi text-[#4F382B] text-5xl font-medium mb-4">
+                      02
+                    </h3>
+                    <p className="text-[#4F382B]/80 text-xl font-light relative after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-px after:bg-[#4F382B]/40 after:transition-all after:duration-300 group-hover:after:w-full">
+                      Alacer Produkty
+                    </p>
+                  </div>
+                  <span className="text-[#4F382B]/60 transition-transform group-hover:translate-x-2">
+                    →
+                  </span>
                 </div>
               </div>
-              <Link
-                href="/produkty"
-                className="border border-[#34302D] rounded px-8 py-2 text-lg text-[#4F382B] hover:bg-[#34302D] hover:text-white transition-colors text-center"
-              >
-                Zobacz produkty
-              </Link>
-            </div>
+            </Link>
           </div>
         </div>
       </div>
