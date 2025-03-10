@@ -73,40 +73,45 @@ export default function Navbar() {
                 <ChevronDown size={16} />
               </a>
 
+              {/* Invisible hover bridge */}
+              <div className="absolute -bottom-2 left-0 h-2 w-full" />
+
               {/* Dropdown menu */}
-              <div className="absolute hidden group-hover:block top-full left-0 mt-2 bg-white/95 backdrop-blur-sm border border-[#4F382B]/10 min-w-[200px]">
-                <Link
-                  href="/projekty"
-                  className="block px-6 py-4 text-[#4F382B] hover:bg-[#4F382B]/5 transition-colors duration-300 group/item"
-                >
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <span className="block text-xs text-[#917E6E] mb-1">
-                        01
+              <div className="absolute hidden group-hover:block left-0 w-[200px] bg-white/95 backdrop-blur-sm border border-[#4F382B]/10">
+                <div className="py-2">
+                  <Link
+                    href="/projekty"
+                    className="block px-6 py-4 text-[#4F382B] hover:bg-[#4F382B]/5 transition-colors duration-300 group/item"
+                  >
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <span className="block text-xs text-[#917E6E] mb-1">
+                          01
+                        </span>
+                        <span className="block">Alacer projekty</span>
+                      </div>
+                      <span className="text-[#4F382B]/60 opacity-0 -translate-x-2 transition-all duration-300 group-hover/item:opacity-100 group-hover/item:translate-x-0">
+                        →
                       </span>
-                      <span className="block">Alacer projekty</span>
                     </div>
-                    <span className="text-[#4F382B]/60 opacity-0 -translate-x-2 transition-all duration-300 group-hover/item:opacity-100 group-hover/item:translate-x-0">
-                      →
-                    </span>
-                  </div>
-                </Link>
-                <Link
-                  href="/produkty"
-                  className="block px-6 py-4 text-[#4F382B] hover:bg-[#4F382B]/5 transition-colors duration-300 group/item"
-                >
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <span className="block text-xs text-[#917E6E] mb-1">
-                        02
+                  </Link>
+                  <Link
+                    href="/produkty"
+                    className="block px-6 py-4 text-[#4F382B] hover:bg-[#4F382B]/5 transition-colors duration-300 group/item"
+                  >
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <span className="block text-xs text-[#917E6E] mb-1">
+                          02
+                        </span>
+                        <span className="block">Alacer produkty</span>
+                      </div>
+                      <span className="text-[#4F382B]/60 opacity-0 -translate-x-2 transition-all duration-300 group-hover/item:opacity-100 group-hover/item:translate-x-0">
+                        →
                       </span>
-                      <span className="block">Alacer produkty</span>
                     </div>
-                    <span className="text-[#4F382B]/60 opacity-0 -translate-x-2 transition-all duration-300 group-hover/item:opacity-100 group-hover/item:translate-x-0">
-                      →
-                    </span>
-                  </div>
-                </Link>
+                  </Link>
+                </div>
               </div>
             </div>
 

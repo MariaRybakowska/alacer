@@ -36,7 +36,7 @@ export default function Products() {
             type="product"
           />
           <ProjectProductCard
-            image="/produkty/metalowe.jpeg"
+            image="/produkty/metalowe.jpg"
             title="Panel metalowy"
             slug="panel-metalowy"
             type="product"

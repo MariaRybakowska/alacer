@@ -2,6 +2,7 @@
 import { ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import Link from "next/link";
 
 type Props = {
   params: {
@@ -9,10 +10,49 @@ type Props = {
   };
 };
 
-const PRODUCTS = {
+type ProductSpecs = {
+  standardDimensions?: string[];
+  maxDimensions?: Record<string, string>;
+  thickness?: Record<string, string>;
+  edge?: string | Record<string, string>;
+  perforation?: Record<string, string>;
+  metalDimensions?: Record<string, string>;
+  finishes?: string[];
+};
+
+type Product = {
+  title: string;
+  image: string;
+  specs?: ProductSpecs;
+};
+
+const PRODUCTS: Record<string, Product> = {
   "panel-fornirowany": {
     title: "Panel fornirowany",
     image: "/produkty/fornirowane.jpg",
+    specs: {
+      standardDimensions: ["600 x 600", "600 x 1200"],
+      maxDimensions: {
+        MDF: "2070 x 2800",
+        HDF: "2070 x 2800",
+        Sklejka: "1250 x 2500",
+        "Płyta wiórowa": "2070 x 2800",
+        Formatica: "1300 x 3050",
+      },
+      thickness: {
+        MDF: "12 / 16 / 18",
+        HDF: "10 / 12",
+        Sklejka: "12-18",
+        "Płyta wiórowa": "12-18",
+        Formatica: "12,5",
+      },
+      edge: "B - 60",
+      perforation: {
+        Standard: "TAK",
+        Micro: "TAK",
+      },
+      finishes: ["dąb", "orzech", "czereśnia", "inne"],
+    },
   },
   "panel-laminowany": {
     title: "Panel laminowany",
@@ -38,11 +78,12 @@ const PRODUCTS = {
         Standard: "TAK",
         Micro: "TAK",
       },
+      finishes: ["drewno", "kamień", "beton", "inne"],
     },
   },
   "panel-metalowy": {
     title: "Panel metalowy",
-    image: "/produkty/metalowe.jpeg",
+    image: "/produkty/metalowe.jpg",
     specs: {
       metalDimensions: {
         Mosiądz: "maks. 800 x 1800",
@@ -61,13 +102,20 @@ const PRODUCTS = {
         Standard: "TAK",
         Micro: "NIE",
       },
+      finishes: [
+        "patynowy",
+        "młotkowany",
+        "błyszczący",
+        "szczotkowany",
+        "inne",
+      ],
     },
   },
   intarsja: {
     title: "Intarsja",
-    image: "/produkty/intarsja.jpg", // Update with actual image
+    image: "/produkty/intarsja.jpg",
   },
-} as const;
+};
 
 export default function ProductPage({ params }: Props) {
   const router = useRouter();
@@ -79,57 +127,11 @@ export default function ProductPage({ params }: Props) {
     }
   }, [product, router]);
 
-  if (!product) {
-    return null;
-  }
+  if (!product) return null;
 
   const renderSpecs = () => {
-    if (params.slug === "panel-metalowy") {
-      return (
-        <div className="text-[#4F382B] space-y-8">
-          <div>
-            <h2 className="text-[#a5a2a0] text-sm mb-2">
-              ROZMIAR METALU A x B (mm)
-            </h2>
-            {Object.entries(product.specs.metalDimensions).map(
-              ([metal, size]) => (
-                <p key={metal}>
-                  {metal}: {size as string}
-                </p>
-              )
-            )}
-          </div>
-          <div>
-            <h2 className="text-[#a5a2a0] text-sm mb-2">GRUBOŚĆ (mm)</h2>
-            {Object.entries(product.specs.thickness).map(([type, value]) => (
-              <p key={type}>
-                {type}: {value}
-              </p>
-            ))}
-          </div>
-          <div>
-            <h2 className="text-[#a5a2a0] text-sm mb-2">KRAWĘDŹ (mm)</h2>
-            {Object.entries(product.specs.edge).map(([type, value]) => (
-              <p key={type}>
-                {type}: {value}
-              </p>
-            ))}
-          </div>
-          <div>
-            <h2 className="text-[#a5a2a0] text-sm mb-2">PERFORACJA (mm)</h2>
-            {Object.entries(product.specs.perforation).map(([type, value]) => (
-              <p key={type}>
-                {type}: {value}
-              </p>
-            ))}
-          </div>
-        </div>
-      );
-    }
-
-    // Default spec render for other panels
     return (
-      <div className="text-[#4F382B] space-y-8">
+      <div className="text-[#4F382B] space-y-6">
         {/* Standard dimensions */}
         <div>
           <h2 className="text-[#a5a2a0] text-sm mb-2">
@@ -143,65 +145,60 @@ export default function ProductPage({ params }: Props) {
           </div>
         </div>
 
-        {/* Custom dimensions */}
-        <div>
-          <h2 className="text-[#a5a2a0] text-sm mb-2">
-            MAKS. WYMIARY A x B (mm)
-          </h2>
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <p>MDF: 2070 x 2800</p>
-              <p>HDF: 2070 x 2800</p>
-              <p>Sklejka: 1250 x 2500</p>
-              <p>Płyta wiórowa: 2070 x 2800</p>
-              <p>Formatica: 1300 x 3050</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Thickness */}
-        <div>
-          <h2 className="text-[#a5a2a0] text-sm mb-2">GRUBOŚĆ (mm)</h2>
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <p>MDF: 12 / 16 /18</p>
-              <p>HDF: 10 / 12</p>
-              <p>Sklejka: 12-18</p>
-              <p>Płyta wiórowa: 12-18</p>
-              <p>Formatica: 12,5</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Edge */}
-        <div>
-          <h2 className="text-[#a5a2a0] text-sm mb-2">KRAWĘDŹ</h2>
-          <p>B - 60</p>
-        </div>
-
         {/* Perforation */}
         <div>
-          <h2 className="text-[#a5a2a0] text-sm mb-2">PERFORACJA (mm)</h2>
+          <h2 className="text-[#a5a2a0] text-sm mb-2">PERFORACJA</h2>
           <div>
             <p>Standard: TAK</p>
-            <p>Micro: TAK</p>
+            <p>Micro: {params.slug === "panel-metalowy" ? "NIE" : "TAK"}</p>
           </div>
+        </div>
+
+        {/* Finish */}
+        <div>
+          <h2 className="text-[#a5a2a0] text-sm mb-2">
+            {params.slug === "panel-laminowany" ? "WYKOŃCZENIA" : "WYKOŃCZENIE"}
+          </h2>
+          <div className="flex flex-col space-y-1">
+            {product.specs?.finishes?.map((finish, index) => (
+              <p key={index} className="font-medium">
+                {finish}
+              </p>
+            ))}
+          </div>
+        </div>
+
+        {/* PDF Button */}
+        <div className="pt-4">
+          <a
+            href="/pdf/specyfikacja.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-6 py-2 border border-[#917E6E] text-[#917E6E] hover:bg-[#917E6E] hover:text-white transition-colors"
+          >
+            POBIERZ SPECYFIKACJĘ
+          </a>
         </div>
       </div>
     );
   };
 
   return (
-    <main className="bg-[#FFFCF5] min-h-screen px-8 pt-[70px]">
-      <div className="max-w-[100%] mx-auto">
-        <h1 className="text-3xl md:text-5xl text-[#917E6E] uppercase mt-12 mb-12">
-          <span className="text-sm md:text-base">Alacer</span> {product.title}
-        </h1>
+    <main className="bg-white min-h-screen px-4 md:px-8">
+      <div className="max-w-[1400px] mx-auto h-[calc(100vh-70px)] my-8 flex flex-col">
+        {/* Back button */}
+        <Link
+          href="/produkty"
+          className="inline-block mt-12 text-[#a5a2a0] hover:underline"
+        >
+          POWRÓT DO PRODUKTÓW
+        </Link>
 
-        <div className="grid xl:grid-cols-12 xl:gap-16">
+        {/* Main content */}
+        <div className="grid md:grid-cols-2 gap-8 items-start flex-grow my-8">
           {/* Left column - Image */}
-          <div className="xl:col-span-7">
-            <div className="aspect-square bg-[#ECE4DC] mb-8">
+          <div>
+            <div className="aspect-square bg-[#F5F5F5] h-full max-h-[70vh]">
               <img
                 src={product.image}
                 alt={product.title}
@@ -210,8 +207,14 @@ export default function ProductPage({ params }: Props) {
             </div>
           </div>
 
-          {/* Right column - Specifications */}
-          <div className="xl:col-span-5">{renderSpecs()}</div>
+          {/* Right column - Product Info */}
+          <div>
+            <h1 className="text-4xl md:text-6xl text-[#917E6E] mb-8">
+              {product.title}
+            </h1>
+
+            {renderSpecs()}
+          </div>
         </div>
       </div>
     </main>
