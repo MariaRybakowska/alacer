@@ -34,14 +34,14 @@ const PROJECTS: Record<string, Project> = {
   },
   "kielce-teatr-zeromskiego": {
     title: "Kielce Teatr im. Stefana Żeromskiego",
-    image: "/projekty/teatr.jpg",
+    image: "/projekty/projekt_3.1.jpg",
     year: "2024",
     description:
       "Realizacja zabudowy akustycznej z mosiądzu wg projektu architektonicznego WXCA oraz akustyki zaprojektowanej przez Pracownię Akustyki Kozłowski. Wykonanie unikatowego plafonu odbijającego nad widownią. Efekt wizualny osiągnięty dzięki zastosowaniu mosiężnej blachy młotkowanej, zamocowanej na konstrukcji stalowej, szczelnie wypełnionej, gwarantując odpowiednią masę. Zabudowa śluzy akustycznej panelami perforowanymi z blachy mosiężnej skutecznie i bardzo designersko spełniła akustyczne założenie projektu.",
   },
   "pobierowo-pinea": {
     title: "Pobierowo PINEA",
-    image: "/projekty/pinea.jpg",
+    image: "/projekty/projekt_2.1.jpg",
     year: "2024",
     description:
       "Realizacja zabudów w częściach wspólnych apartamentowca wg projektu pracowni ELD z Poznania. W realizacji wykorzystane zostały bardzo różnorodne materiały wykończeniowe: laminaty, drewno, płyty elewacyjne włóknowo-cementowe, tkanina, chrobotek oraz listwy oświetleniowe nadające dodatkowy efekt zabudowie.",

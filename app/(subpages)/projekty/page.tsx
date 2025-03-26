@@ -14,12 +14,12 @@ const PROJECTS = [
   {
     title: "Kielce Teatr im. Stefana Żeromskiego",
     slug: "kielce-teatr-zeromskiego",
-    image: "/projekty/teatr.jpg",
+    image: "/projekty/projekt_3.1.jpg",
   },
   {
     title: "Pobierowo PINEA",
     slug: "pobierowo-pinea",
-    image: "/projekty/pinea.jpg",
+    image: "/projekty/projekt_2.1.jpg",
   },
   {
     title: "Warszawa Hotel PURO",
