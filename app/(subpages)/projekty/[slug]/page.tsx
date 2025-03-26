@@ -34,7 +34,7 @@ const PROJECTS: Record<string, Project> = {
   },
   "kielce-teatr-zeromskiego": {
     title: "Kielce Teatr im. Stefana Żeromskiego",
-    image: "/projekty/projekt_3.1.jpg",
+    image: "/projekty/projekt_3.1.JPG",
     year: "2024",
     description:
       "Realizacja zabudowy akustycznej z mosiądzu wg projektu architektonicznego WXCA oraz akustyki zaprojektowanej przez Pracownię Akustyki Kozłowski. Wykonanie unikatowego plafonu odbijającego nad widownią. Efekt wizualny osiągnięty dzięki zastosowaniu mosiężnej blachy młotkowanej, zamocowanej na konstrukcji stalowej, szczelnie wypełnionej, gwarantując odpowiednią masę. Zabudowa śluzy akustycznej panelami perforowanymi z blachy mosiężnej skutecznie i bardzo designersko spełniła akustyczne założenie projektu.",

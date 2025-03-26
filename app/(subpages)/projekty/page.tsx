@@ -14,7 +14,7 @@ const PROJECTS = [
   {
     title: "Kielce Teatr im. Stefana Żeromskiego",
     slug: "kielce-teatr-zeromskiego",
-    image: "/projekty/projekt_3.1.jpg",
+    image: "/projekty/projekt_3.1.JPG",
   },
   {
     title: "Pobierowo PINEA",
