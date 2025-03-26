@@ -9,7 +9,7 @@ const PROJECTS = [
   {
     title: "Pabianice Sala Koncertowo-bankietowa Pawelana",
     slug: "pabianice-sala-koncertowo-bankietowa",
-    image: "/projekty/pawelana.jpg",
+    image: "/projekty/projekt_2.1.jpg",
   },
   {
     title: "Kielce Teatr im. Stefana Żeromskiego",
@@ -19,7 +19,7 @@ const PROJECTS = [
   {
     title: "Pobierowo PINEA",
     slug: "pobierowo-pinea",
-    image: "/projekty/projekt_2.1.jpg",
+    image: "/projekty/projekt",
   },
   {
     title: "Warszawa Hotel PURO",

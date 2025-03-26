@@ -26,7 +26,7 @@ const PROJECTS: Record<string, Project> = {
   },
   "pabianice-sala-koncertowo-bankietowa": {
     title: "Pabianice Sala Koncertowo-bankietowa Pawelana",
-    image: "/projekty/pawelana.jpg",
+    image: "/projekty/projekt_2.1.jpg",
     year: "2023",
     area: "300m²",
     description:
@@ -41,7 +41,7 @@ const PROJECTS: Record<string, Project> = {
   },
   "pobierowo-pinea": {
     title: "Pobierowo PINEA",
-    image: "/projekty/projekt_2.1.jpg",
+    image: "/projekty/projekt",
     year: "2024",
     description:
       "Realizacja zabudów w częściach wspólnych apartamentowca wg projektu pracowni ELD z Poznania. W realizacji wykorzystane zostały bardzo różnorodne materiały wykończeniowe: laminaty, drewno, płyty elewacyjne włóknowo-cementowe, tkanina, chrobotek oraz listwy oświetleniowe nadające dodatkowy efekt zabudowie.",
