@@ -2,27 +2,27 @@ import ProjectProductCard from "../../../components/ProjectProductCard";
 
 const PROJECTS = [
   {
-    title: "Katowice Panteon Górnośląski",
+    title: "Panteon Górnośląski",
     slug: "katowice-panteon-gornoslaski",
     image: "/projekty/panteon.jpg",
   },
   {
-    title: "Pabianice Sala Koncertowo-bankietowa Pawelana",
+    title: "Sala Koncertowo-bankietowa Pawelana",
     slug: "pabianice-sala-koncertowo-bankietowa",
-    image: "/projekty/projekt_2.1.jpg",
+    image: "/projekty/pabianice.jpg",
   },
   {
-    title: "Kielce Teatr im. Stefana Żeromskiego",
+    title: "Teatr im. Stefana Żeromskiego",
     slug: "kielce-teatr-zeromskiego",
-    image: "/projekty/projekt_3.1.JPG",
+    image: "/projekty/zeromskiego.jpg",
   },
   {
-    title: "Pobierowo PINEA",
+    title: "PINEA",
     slug: "pobierowo-pinea",
     image: "/projekty/projekt",
   },
   {
-    title: "Warszawa Hotel PURO",
+    title: " Hotel PURO",
     slug: "warszawa-hotel-puro",
     image: "/projekty/puro.jpg",
   },
@@ -32,17 +32,20 @@ export default function Projects() {
   return (
     <main className="bg-[#FFFCF5] min-h-screen px-8 pt-[70px] pb-24">
       <div className="max-w-[100%] mx-auto">
-        <h1 className="text-3xl md:text-5xl text-[#917E6E] uppercase mt-12 mb-12">
-          <span className="text-sm md:text-base">Alacer</span> projekty
+        <h1 className="text-3xl  text-[#917E6E] uppercase mt-12 mb-12">
+          projekty
         </h1>
 
         {/* Two column text section */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           <p className="text-[#34302D]">
-            Nasze realizacje to połączenie innowacyjnych rozwiązań akustycznych
-            z estetyką i funkcjonalnością. Każdy projekt jest unikalny i
-            dostosowany do specyficznych potrzeb przestrzeni, tworząc harmonijne
-            środowisko dźwiękowe.
+            Od wielu lat angażujemy się w realizacje projektów w obiektach o
+            różnych funkcjach. Każdy projekt jest unikatowy i dostosowany do
+            specyficznych potrzeb. Oto nasze realizacje z ostatnich trzech lat,
+            chociaż zaangażowani byliśmy jako nadzór i doradztwo techniczne
+            również w takich projektach jak: Muzeum Wojska Polskiego, Muzeum
+            Historii Polski, Ambasada Rzeczypospolitej Polskiej w Berlinie i
+            wielu innych.
           </p>
         </div>
 

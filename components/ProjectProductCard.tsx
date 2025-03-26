@@ -25,7 +25,9 @@ export default function ProjectProductCard({
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
       </div>
-      <h3 className="text-sm font-bold text-[#34302D]">{title}</h3>
+      <div className="mt-4">
+        <h2 className="text-base text-[#34302d]">{title}</h2>
+      </div>
     </Link>
   );
 }

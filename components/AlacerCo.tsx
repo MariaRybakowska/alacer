@@ -23,13 +23,13 @@ export default function AlacerCo() {
                   />
                 </div>
                 <div className="flex justify-between items-center p-8">
-                  <div>
-                    <h3 className="font-satoshi text-[#4F382B] text-5xl font-medium mb-4">
+                  <div className="flex gap-4 items-end">
+                    <p className="font-satoshi text-[#4F382B] text-lg font-medium">
                       01
-                    </h3>
-                    <p className="text-[#4F382B]/80 text-xl font-light relative after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-px after:bg-[#4F382B]/40 after:transition-all after:duration-300 group-hover:after:w-full">
-                      Alacer Projekty
                     </p>
+                    <h3 className="text-[#4F382B]/80  text-3xl font-light relative after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-px after:bg-[#4F382B]/40 after:transition-all after:duration-300 group-hover:after:w-full">
+                      Alacer Projekty
+                    </h3>
                   </div>
                   <span className="text-[#4F382B]/60 transition-transform group-hover:translate-x-2">
                     →
@@ -50,13 +50,13 @@ export default function AlacerCo() {
                   />
                 </div>
                 <div className="flex justify-between items-center p-8">
-                  <div>
-                    <h3 className="font-satoshi text-[#4F382B] text-5xl font-medium mb-4">
+                  <div className="flex gap-4 items-end">
+                    <p className="font-satoshi text-[#4F382B] text-lg font-medium">
                       02
-                    </h3>
-                    <p className="text-[#4F382B]/80 text-xl font-light relative after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-px after:bg-[#4F382B]/40 after:transition-all after:duration-300 group-hover:after:w-full">
-                      Alacer Produkty
                     </p>
+                    <h3 className="text-[#4F382B]/80  text-3xl font-light relative after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-px after:bg-[#4F382B]/40 after:transition-all after:duration-300 group-hover:after:w-full">
+                      Alacer Produkty
+                    </h3>
                   </div>
                   <span className="text-[#4F382B]/60 transition-transform group-hover:translate-x-2">
                     →

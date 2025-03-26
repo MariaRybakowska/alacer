@@ -17,7 +17,7 @@ type Props = {
 
 const PROJECTS: Record<string, Project> = {
   "katowice-panteon-gornoslaski": {
-    title: "Katowice Panteon Górnośląski",
+    title: "Panteon Górnośląski",
     image: "/projekty/panteon.jpg",
     year: "2022",
     area: "50m²",
@@ -25,22 +25,22 @@ const PROJECTS: Record<string, Project> = {
       "Obudowa słupów konstrukcyjnych w sali konferencyjnej ustrojami akustycznymi w postaci skrzyń wypełnionych wełną akustyczną. Ustrój chłonący został wykończony panelami fornirowanymi z perforacją przelotową.",
   },
   "pabianice-sala-koncertowo-bankietowa": {
-    title: "Pabianice Sala Koncertowo-bankietowa Pawelana",
-    image: "/projekty/projekt_2.1.jpg",
+    title: "Sala Koncertowo-bankietowa Pawelana",
+    image: "/projekty/pabianice.jpg",
     year: "2023",
     area: "300m²",
     description:
       "Zabudowa ścian sali koncertowo-bankietowej wg operatu akustycznego ustrojami akustycznymi z mikroperforacją.",
   },
   "kielce-teatr-zeromskiego": {
-    title: "Kielce Teatr im. Stefana Żeromskiego",
-    image: "/projekty/projekt_3.1.JPG",
+    title: "Teatr im. Stefana Żeromskiego",
+    image: "/projekty/zeromskiego.jpg",
     year: "2024",
     description:
       "Realizacja zabudowy akustycznej z mosiądzu wg projektu architektonicznego WXCA oraz akustyki zaprojektowanej przez Pracownię Akustyki Kozłowski. Wykonanie unikatowego plafonu odbijającego nad widownią. Efekt wizualny osiągnięty dzięki zastosowaniu mosiężnej blachy młotkowanej, zamocowanej na konstrukcji stalowej, szczelnie wypełnionej, gwarantując odpowiednią masę. Zabudowa śluzy akustycznej panelami perforowanymi z blachy mosiężnej skutecznie i bardzo designersko spełniła akustyczne założenie projektu.",
   },
   "pobierowo-pinea": {
-    title: "Pobierowo PINEA",
+    title: "PINEA",
     image: "/projekty/projekt",
     year: "2024",
     description:
@@ -108,7 +108,7 @@ export default function ProjectPage({ params }: Props) {
               {/* Description */}
               <div>
                 <h2 className="text-[#a5a2a0] text-sm mb-2">OPIS</h2>
-                <p className="leading-relaxed">{project.description}</p>
+                <p className="leading-relaxed text-lg">{project.description}</p>
               </div>
             </div>
           </div>

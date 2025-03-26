@@ -139,8 +139,8 @@ export default function ProductPage({ params }: Props) {
           </h2>
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <p className="font-medium">600 x 600</p>
-              <p className="font-medium">600 x 1200</p>
+              <p className="font-medium text-lg">600 x 600</p>
+              <p className="font-medium text-lg">600 x 1200</p>
             </div>
           </div>
         </div>
@@ -149,8 +149,10 @@ export default function ProductPage({ params }: Props) {
         <div>
           <h2 className="text-[#a5a2a0] text-sm mb-2">PERFORACJA</h2>
           <div>
-            <p>Standard: TAK</p>
-            <p>Micro: {params.slug === "panel-metalowy" ? "NIE" : "TAK"}</p>
+            <p className="text-lg">Standard: TAK</p>
+            <p className="text-lg">
+              Micro: {params.slug === "panel-metalowy" ? "NIE" : "TAK"}
+            </p>
           </div>
         </div>
 
@@ -161,7 +163,7 @@ export default function ProductPage({ params }: Props) {
           </h2>
           <div className="flex flex-col space-y-1">
             {product.specs?.finishes?.map((finish, index) => (
-              <p key={index} className="font-medium">
+              <p key={index} className="font-medium text-lg">
                 {finish}
               </p>
             ))}

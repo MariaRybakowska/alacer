@@ -6,13 +6,16 @@ export default function AboutSection() {
           o nas
         </h2>
         <div className="xl:col-span-9 xl:pl-8">
-          <p className="text-2xl text-[#34302D] mb-6">
-            W realizowanych przez nas projektach{" "}
-            <strong>łączymy funkcję z estetyką</strong>. Często zdarza się, że
-            design utrudnia lub wręcz uniemożliwia osiągniecie założeń
-            akustycznych, wtedy wkraczamy do akcji..
+          <p className="text-lg text-[#34302D] mb-6">
+            Realizujemy projekty na terenie całego kraju od 2001 roku.
+            Wieloletnie doświadczenie produkcyjne oraz wiedza w zakresie
+            technologii i materiałów pozwala nam na tworzenie nowych,
+            innowacyjnych rozwiązań w każdym kolejnym projekcie. Nasze
+            realizacje łączą funkcję z estetyką i funkcjonalnością. Często
+            zdarza się, że design utrudnia lub wręcz uniemożliwia osiągnięcie
+            założeń akustycznych, wtedy wkraczamy do akcji...
           </p>
-          <button className="border border-[#34302D] rounded px-8 py-4 text-lg text-[#4F382B]">
+          <button className="border border-[#34302D] rounded px-8 py-2 text-lg text-[#4F382B] min-w-[200px]">
             Napisz do nas!
           </button>
           <div className="flex flex-col md:flex-row gap-6 mt-[73px]">

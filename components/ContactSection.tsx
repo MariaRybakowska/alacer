@@ -37,7 +37,7 @@ export default function ContactSection() {
           kontakt
         </h2>
         <div className="xl:col-span-9 xl:pl-8">
-          <p className="text-2xl text-[#34302D] mb-12">
+          <p className="text-lg text-[#34302D] mb-12">
             Priorytetem jest dla nas ścisła współpraca na każdym etapie,
             zapewniająca spersonalizowane podejście.
           </p>
@@ -73,7 +73,7 @@ export default function ContactSection() {
               ></textarea>
               <button
                 type="submit"
-                className="border border-[#34302D] rounded px-8 py-4 text-lg text-[#4F382B] hover:bg-[#34302D] hover:text-white transition-colors"
+                className="border border-[#34302D] rounded px-8 py-2 text-lg text-[#4F382B] hover:bg-[#34302D] hover:text-white transition-colors min-w-[200px]"
               >
                 Wyślij
               </button>
