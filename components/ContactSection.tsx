@@ -34,13 +34,9 @@ export default function ContactSection() {
     >
       <div className="xl:grid xl:grid-cols-12 xl:gap-8">
         <h2 className="text-3xl text-[#917E6E] uppercase mb-6 xl:mb-0 xl:col-span-3">
-          kontakt
+          napisz do nas
         </h2>
         <div className="xl:col-span-9 xl:pl-8">
-          <p className="text-lg text-[#34302D] mb-12">
-            Priorytetem jest dla nas ścisła współpraca na każdym etapie,
-            zapewniająca spersonalizowane podejście.
-          </p>
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-[74px]">
             <form onSubmit={handleSubmit} className="flex-grow max-w-[640px]">
               <input
