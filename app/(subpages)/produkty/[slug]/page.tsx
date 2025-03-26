@@ -209,7 +209,7 @@ export default function ProductPage({ params }: Props) {
 
           {/* Right column - Product Info */}
           <div>
-            <h1 className="text-4xl md:text-6xl text-[#917E6E] mb-8">
+            <h1 className="text-4xl md:text-4xl text-[#917E6E] mb-8">
               {product.title}
             </h1>
 
