@@ -7,6 +7,10 @@ type Project = {
   year: string;
   area?: string;
   description: string;
+  additionalImages?: Array<{
+    src: string;
+    description: string;
+  }>;
 };
 
 type Props = {
@@ -31,6 +35,24 @@ const PROJECTS: Record<string, Project> = {
     area: "300m²",
     description:
       "Zabudowa ścian sali koncertowo-bankietowej wg operatu akustycznego ustrojami akustycznymi z mikroperforacją.",
+    additionalImages: [
+      {
+        src: "/projekty/pabianice/rewizje.jpg",
+        description: "rewizje w panelach",
+      },
+      {
+        src: "/projekty/pabianice/wykończenie.jpg",
+        description: "wykończenie narożnika",
+      },
+      {
+        src: "/projekty/pabianice/sufit.jpg",
+        description: "sufit kasetonowy",
+      },
+      {
+        src: "/projekty/pabianice/panele.jpg",
+        description: "panele perforowane -ustrój chłonący",
+      },
+    ],
   },
   "kielce-teatr-zeromskiego": {
     title: "Teatr im. Stefana Żeromskiego",
@@ -38,13 +60,49 @@ const PROJECTS: Record<string, Project> = {
     year: "2024",
     description:
       "Realizacja zabudowy akustycznej z mosiądzu wg projektu architektonicznego WXCA oraz akustyki zaprojektowanej przez Pracownię Akustyki Kozłowski. Wykonanie unikatowego plafonu odbijającego nad widownią. Efekt wizualny osiągnięty dzięki zastosowaniu mosiężnej blachy młotkowanej, zamocowanej na konstrukcji stalowej, szczelnie wypełnionej, gwarantując odpowiednią masę. Zabudowa śluzy akustycznej panelami perforowanymi z blachy mosiężnej skutecznie i bardzo designersko spełniła akustyczne założenie projektu.",
+    additionalImages: [
+      {
+        src: "/projekty/Teatr im. Stefana Żeromskiego w Kielcach/plafon.jpg",
+        description: "plafon - ekran odbijający",
+      },
+      {
+        src: "/projekty/Teatr im. Stefana Żeromskiego w Kielcach/blacha.jpg",
+        description: "blacha mosiężna, młotkowana",
+      },
+      {
+        src: "/projekty/Teatr im. Stefana Żeromskiego w Kielcach/sluza.jpg",
+        description: "śluza akustyczna",
+      },
+      {
+        src: "/projekty/Teatr im. Stefana Żeromskiego w Kielcach/panale.jpg",
+        description: "panele mosiężne perforowane",
+      },
+      {
+        src: "/projekty/Teatr im. Stefana Żeromskiego w Kielcach/reling.jpg",
+        description: "reling mosiężny, konsola mosiądzowana",
+      },
+    ],
   },
   "pobierowo-pinea": {
     title: "PINEA",
-    image: "/projekty/projekt",
+    image: "/projekty/Pobierowo/zabudowa-akustyczna.jpg",
     year: "2024",
     description:
       "Realizacja zabudów w częściach wspólnych apartamentowca wg projektu pracowni ELD z Poznania. W realizacji wykorzystane zostały bardzo różnorodne materiały wykończeniowe: laminaty, drewno, płyty elewacyjne włóknowo-cementowe, tkanina, chrobotek oraz listwy oświetleniowe nadające dodatkowy efekt zabudowie.",
+    additionalImages: [
+      {
+        src: "/projekty/Pobierowo/zabudowa-akustyczna.jpg",
+        description: "zabudowa akustyczna w części restauracyjnej",
+      },
+      {
+        src: "/projekty/Pobierowo/zabudowa-meblowa.jpg",
+        description: "zabudowa meblowa",
+      },
+      {
+        src: "/projekty/Pobierowo/panele.jpg",
+        description: "panele ścienne",
+      },
+    ],
   },
   "warszawa-hotel-puro": {
     title: "Warszawa Hotel PURO",
@@ -61,8 +119,8 @@ export default function ProjectPage({ params }: Props) {
   if (!project) return null;
 
   return (
-    <main className="bg-white min-h-screen px-4 md:px-8">
-      <div className="max-w-[1400px] mx-auto h-[calc(100vh-70px)] my-8 flex flex-col">
+    <main className="bg-white min-h-screen px-4 md:px-8 pb-24">
+      <div className="max-w-[1400px] mx-auto my-8">
         {/* Back button */}
         <Link
           href="/projekty"
@@ -72,7 +130,7 @@ export default function ProjectPage({ params }: Props) {
         </Link>
 
         {/* Main content */}
-        <div className="grid md:grid-cols-2 gap-8 items-start flex-grow my-8">
+        <div className="grid md:grid-cols-2 gap-8 items-start my-8">
           {/* Left column - Image */}
           <div>
             <div className="aspect-square bg-[#F5F5F5] h-full max-h-[70vh]">
@@ -113,6 +171,26 @@ export default function ProjectPage({ params }: Props) {
             </div>
           </div>
         </div>
+
+        {/* Additional Images Section */}
+        {project.additionalImages && project.additionalImages.length > 0 && (
+          <div className="mt-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {project.additionalImages.map((img, index) => (
+                <div key={index} className="space-y-2">
+                  <div className="aspect-square bg-[#F5F5F5] overflow-hidden">
+                    <img
+                      src={img.src}
+                      alt={img.description}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <p className="text-base text-[#917E6E]">{img.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </main>
   );
