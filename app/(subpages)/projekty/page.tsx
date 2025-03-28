@@ -2,11 +2,6 @@ import ProjectProductCard from "../../../components/ProjectProductCard";
 
 const PROJECTS = [
   {
-    title: "Panteon Górnośląski",
-    slug: "katowice-panteon-gornoslaski",
-    image: "/projekty/panteon.jpg",
-  },
-  {
     title: "Sala Koncertowo-bankietowa Pawelana",
     slug: "pabianice-sala-koncertowo-bankietowa",
     image: "/projekty/pabianice.jpg",
@@ -19,12 +14,12 @@ const PROJECTS = [
   {
     title: "PINEA",
     slug: "pobierowo-pinea",
-    image: "/projekty/projekt",
+    image: "/projekty/Pobierowo/zabudowa-akustyczna.jpg",
   },
   {
     title: " Hotel PURO",
     slug: "warszawa-hotel-puro",
-    image: "/projekty/puro.jpg",
+    image: "/projekty/puro/puro.jpg",
   },
 ];
 

@@ -20,14 +20,6 @@ type Props = {
 };
 
 const PROJECTS: Record<string, Project> = {
-  "katowice-panteon-gornoslaski": {
-    title: "Panteon Górnośląski",
-    image: "/projekty/panteon.jpg",
-    year: "2022",
-    area: "50m²",
-    description:
-      "Obudowa słupów konstrukcyjnych w sali konferencyjnej ustrojami akustycznymi w postaci skrzyń wypełnionych wełną akustyczną. Ustrój chłonący został wykończony panelami fornirowanymi z perforacją przelotową.",
-  },
   "pabianice-sala-koncertowo-bankietowa": {
     title: "Sala Koncertowo-bankietowa Pawelana",
     image: "/projekty/pabianice.jpg",
@@ -106,7 +98,7 @@ const PROJECTS: Record<string, Project> = {
   },
   "warszawa-hotel-puro": {
     title: "Warszawa Hotel PURO",
-    image: "/projekty/puro.jpg",
+    image: "/projekty/puro/puro.jpg",
     year: "2025",
     description:
       "Zabudowa akustyczna sufitu w Bistro. Dzięki zastosowaniu mikroperforacji osiągnięty został pożądany efekt akustyczny i designerski zaprojektowany przez zespół projektowy Puro Hotels",
