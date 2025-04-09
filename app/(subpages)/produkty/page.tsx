@@ -11,13 +11,16 @@ export default function Products() {
         {/* Two column text section */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           <p className="text-[#34302D]">
-            Doskonały dźwięk zaczyna się w domu. Nasza gama paneli akustycznych
-            została zaprojektowana do użytku domowego i indywidualnego,
-            poprawiając akustykę w domu, jednocześnie dodając stylowy akcent.
-            Niezależnie od tego, czy tworzysz domowe studio, ulepszasz swoją
-            przestrzeń życiową, czy szukasz cichszego środowiska, nasze
-            rozwiązania zapewniają zarówno wydajność, jak i estetykę, aby
-            spełnić Twoje potrzeby.
+            Dobra akustyka powinna nam towarzyszyć nie tylko w budynkach
+            użyteczności publicznej, czy w budynkach o specjalistycznym
+            przeznaczeniu takim jak opery, sale koncertowe, kina czy teatry.
+            Dzięki poprawie komfortu akustycznego w naszych domach, biurach,
+            salkach konferencyjnych, w których przebywamy znaczną część naszego
+            życia, dbamy o swój własny dobrostan. <br />
+            Niezależnie od tego czy tworzysz kino domowe, studio nagrań, czy
+            salon, w którym po prostu odpoczywasz przy dobrej muzyce,
+            proponujemy rozwiązania zapewniające pożądaną funkcję design
+            zaprojektowany specjalnie dla ciebie.
           </p>
         </div>
 

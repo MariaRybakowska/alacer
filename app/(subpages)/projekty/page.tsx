@@ -2,15 +2,16 @@ import ProjectProductCard from "../../../components/ProjectProductCard";
 
 const PROJECTS = [
   {
-    title: "Sala Koncertowo-bankietowa Pawelana",
-    slug: "pabianice-sala-koncertowo-bankietowa",
-    image: "/projekty/pabianice.jpg",
-  },
-  {
     title: "Teatr im. Stefana Żeromskiego",
     slug: "kielce-teatr-zeromskiego",
     image: "/projekty/zeromskiego.jpg",
   },
+  {
+    title: "Sala Koncertowo-bankietowa Pawelana",
+    slug: "pabianice-sala-koncertowo-bankietowa",
+    image: "/projekty/pabianice.jpg",
+  },
+
   {
     title: "PINEA",
     slug: "pobierowo-pinea",

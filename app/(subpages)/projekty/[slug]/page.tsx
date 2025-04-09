@@ -20,32 +20,6 @@ type Props = {
 };
 
 const PROJECTS: Record<string, Project> = {
-  "pabianice-sala-koncertowo-bankietowa": {
-    title: "Sala Koncertowo-bankietowa Pawelana",
-    image: "/projekty/pabianice.jpg",
-    year: "2023",
-    area: "300m²",
-    description:
-      "Zabudowa ścian sali koncertowo-bankietowej wg operatu akustycznego ustrojami akustycznymi z mikroperforacją.",
-    additionalImages: [
-      {
-        src: "/projekty/pabianice/rewizje.jpg",
-        description: "rewizje w panelach",
-      },
-      {
-        src: "/projekty/pabianice/wykończenie.jpg",
-        description: "wykończenie narożnika",
-      },
-      {
-        src: "/projekty/pabianice/sufit.jpg",
-        description: "sufit kasetonowy",
-      },
-      {
-        src: "/projekty/pabianice/panele.jpg",
-        description: "panele perforowane -ustrój chłonący",
-      },
-    ],
-  },
   "kielce-teatr-zeromskiego": {
     title: "Teatr im. Stefana Żeromskiego",
     image: "/projekty/zeromskiego.jpg",
@@ -75,6 +49,33 @@ const PROJECTS: Record<string, Project> = {
       },
     ],
   },
+  "pabianice-sala-koncertowo-bankietowa": {
+    title: "Sala Koncertowo-bankietowa Pawelana",
+    image: "/projekty/pabianice.jpg",
+    year: "2023",
+    area: "300m²",
+    description:
+      "Zabudowa ścian sali koncertowo-bankietowej wg operatu akustycznego ustrojami akustycznymi z mikroperforacją.",
+    additionalImages: [
+      {
+        src: "/projekty/pabianice/rewizje.jpg",
+        description: "rewizje w panelach",
+      },
+      {
+        src: "/projekty/pabianice/wykończenie.jpg",
+        description: "wykończenie narożnika",
+      },
+      {
+        src: "/projekty/pabianice/sufit.jpg",
+        description: "sufit kasetonowy",
+      },
+      {
+        src: "/projekty/pabianice/panele.jpg",
+        description: "panele perforowane -ustrój chłonący",
+      },
+    ],
+  },
+
   "pobierowo-pinea": {
     title: "PINEA",
     image: "/projekty/Pobierowo/zabudowa-akustyczna.jpg",
