@@ -13,7 +13,6 @@ export default function Home() {
       <div className="max-w-[100%] mx-auto px-4 md:px-8">
         <Hero />
         <AlacerCo />
-        <AboutSection />
         <OfferSection />
         <ContactSection />
         <Footer />

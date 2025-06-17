@@ -1,71 +1,51 @@
 "use client";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function AlacerCo() {
   return (
-    <section id="alacer-co" className="border-t border-[#4F382B] py-6 mt-24">
-      <div className="xl:grid xl:grid-cols-12 xl:gap-8">
-        <h2 className="text-3xl text-[#917E6E] uppercase mb-6 xl:mb-0 xl:col-span-3">
-          CO ROBIMY
-        </h2>
-        <div className="xl:col-span-9 xl:pl-8">
-          <div className="flex flex-col md:flex-row gap-12">
-            {/* Projects Card */}
-            <Link href="/projekty" className="flex-1 group">
-              <div className="shadow-[0_4px_20px_rgba(0,0,0,0.05)] transition-all duration-500 group-hover:shadow-[0_4px_30px_rgba(0,0,0,0.12)]">
-                <div className="relative aspect-square overflow-hidden">
-                  <Image
-                    src="/main-page/projekt.svg"
-                    alt="Projekty"
-                    fill
-                    className="object-contain transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <div className="flex justify-between items-center p-8">
-                  <div className="flex gap-4 items-end">
-                    <p className="font-satoshi text-[#4F382B] text-lg font-medium">
-                      01
-                    </p>
-                    <h3 className="text-[#4F382B]/80  text-3xl font-light relative after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-px after:bg-[#4F382B]/40 after:transition-all after:duration-300 group-hover:after:w-full">
-                      Alacer Projekty
-                    </h3>
-                  </div>
-                  <span className="text-[#4F382B]/60 transition-transform group-hover:translate-x-2">
-                    →
-                  </span>
-                </div>
-              </div>
-            </Link>
-
-            {/* Products Card */}
-            <Link href="/produkty" className="flex-1 group">
-              <div className="shadow-[0_4px_20px_rgba(0,0,0,0.05)] transition-all duration-500 group-hover:shadow-[0_4px_30px_rgba(0,0,0,0.12)]">
-                <div className="relative aspect-square overflow-hidden">
-                  <Image
-                    src="/main-page/produkt.svg"
-                    alt="Produkty"
-                    fill
-                    className="object-contain transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <div className="flex justify-between items-center p-8">
-                  <div className="flex gap-4 items-end">
-                    <p className="font-satoshi text-[#4F382B] text-lg font-medium">
-                      02
-                    </p>
-                    <h3 className="text-[#4F382B]/80  text-3xl font-light relative after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-px after:bg-[#4F382B]/40 after:transition-all after:duration-300 group-hover:after:w-full">
-                      Alacer Produkty
-                    </h3>
-                  </div>
-                  <span className="text-[#4F382B]/60 transition-transform group-hover:translate-x-2">
-                    →
-                  </span>
-                </div>
-              </div>
-            </Link>
-          </div>
-        </div>
+    <section
+      id="alacer-co"
+      className="border-t border-[#4F382B] py-0 mt-24 bg-[#FAF7F2]"
+    >
+      <div className="flex flex-col md:flex-row w-full min-h-[320px]">
+        {/* Projekty */}
+        <Link
+          href="/projekty"
+          className="flex-1 flex flex-col justify-center items-start px-8 py-16 md:py-24 bg-gradient-to-br from-[#B48A6D] via-[#917E6E] to-[#4F382B] transition-transform hover:scale-[1.02] group"
+          style={{ minWidth: 0 }}
+        >
+          <span className="text-sm uppercase tracking-widest text-white/80 mb-2 font-semibold">
+            Projekty
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Alacer Projekty
+          </h2>
+          <p className="text-lg md:text-xl text-white/90 mb-8 max-w-md">
+            Odkryj nasze realizacje w przestrzeniach publicznych i prywatnych
+          </p>
+          <span className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-white/20 text-white text-3xl transition-transform duration-200 group-hover:translate-x-2">
+            →
+          </span>
+        </Link>
+        {/* Produkty */}
+        <Link
+          href="/produkty"
+          className="flex-1 flex flex-col justify-center items-start px-8 py-16 md:py-24 bg-gradient-to-br from-[#F5F0E8] via-[#E3C7A6] to-[#A3B6C2] transition-transform hover:scale-[1.02] group"
+          style={{ minWidth: 0 }}
+        >
+          <span className="text-sm uppercase tracking-widest text-[#4F382B]/70 mb-2 font-semibold">
+            Produkty
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#4F382B] mb-4">
+            Alacer Produkty
+          </h2>
+          <p className="text-lg md:text-xl text-[#4F382B]/80 mb-8 max-w-md">
+            Poznaj naszą kolekcję paneli akustycznych i wykończeniowych
+          </p>
+          <span className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#4F382B]/10 text-[#4F382B] text-3xl transition-transform duration-200 group-hover:translate-x-2">
+            →
+          </span>
+        </Link>
       </div>
     </section>
   );

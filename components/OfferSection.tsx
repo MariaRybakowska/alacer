@@ -2,14 +2,14 @@ export default function OfferSection() {
   return (
     <section className="border-t border-[#4F382B] py-6 mt-24">
       <div className="xl:grid xl:grid-cols-12 xl:gap-8">
-        <h2 className="text-3xl text-[#917E6E] uppercase mb-6 xl:mb-0 xl:col-span-3">
+        <h2 className="text-2xl text-[#917E6E] uppercase mb-6 xl:mb-0 xl:col-span-3">
           Oferta
         </h2>
         <div className="xl:col-span-9 xl:pl-8">
           <div className="grid md:grid-cols-2 gap-x-12 gap-y-16">
             {/* 01 Konsultacje projektowe */}
             <div>
-              <div className="mb-4">
+              <div className="mb-4 flex items-baseline gap-4">
                 <span className="text-base text-[#917E6E]">01</span>
                 <h3 className="text-2xl text-[#4F382B] font-light mt-1">
                   Konsultacje projektowe
@@ -23,7 +23,7 @@ export default function OfferSection() {
 
             {/* 02 Projekt i koncepcja */}
             <div>
-              <div className="mb-4">
+              <div className="mb-4 flex items-baseline gap-4">
                 <span className="text-base text-[#917E6E]">02</span>
                 <h3 className="text-2xl text-[#4F382B] font-light mt-1">
                   Projekt i koncepcja
@@ -38,7 +38,7 @@ export default function OfferSection() {
 
             {/* 03 Wybór materiałów */}
             <div>
-              <div className="mb-4">
+              <div className="mb-4 flex items-baseline gap-4">
                 <span className="text-base text-[#917E6E]">03</span>
                 <h3 className="text-2xl text-[#4F382B] font-light mt-1">
                   Wybór materiałów
@@ -52,7 +52,7 @@ export default function OfferSection() {
 
             {/* 04 Realizacja */}
             <div>
-              <div className="mb-4">
+              <div className="mb-4 flex items-baseline gap-4">
                 <span className="text-base text-[#917E6E]">04</span>
                 <h3 className="text-2xl text-[#4F382B] font-light mt-1">
                   Realizacja

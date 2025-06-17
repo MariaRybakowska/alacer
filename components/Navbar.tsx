@@ -2,7 +2,6 @@
 import Image from "next/image";
 import { useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
-import Lenis from "@studio-freight/lenis";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 
@@ -17,22 +16,27 @@ export default function Navbar() {
 
   const handleNavigation = (e: React.MouseEvent, section?: string) => {
     e.preventDefault();
+    const sectionId =
+      section === "about"
+        ? "oferta-section"
+        : section === "contact"
+        ? "contact"
+        : section;
     if (!isHomePage) {
       router.push("/");
-      // Wait for navigation to complete before scrolling
       setTimeout(() => {
-        if (section && window.lenis) {
-          window.lenis.scrollTo(`#${section}`, {
-            offset: -70,
-            duration: 1.5,
-          });
+        if (sectionId) {
+          const el = document.getElementById(sectionId);
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+          }
         }
-      }, 100);
-    } else if (section && window.lenis) {
-      window.lenis.scrollTo(`#${section}`, {
-        offset: -70,
-        duration: 1.5,
-      });
+      }, 300);
+    } else if (sectionId) {
+      const el = document.getElementById(sectionId);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 
@@ -55,14 +59,6 @@ export default function Navbar() {
 
           {/* Desktop menu */}
           <div className="hidden lg:flex items-center gap-8 text-sm text-[#34302D]">
-            <a
-              href="/"
-              className="transition-opacity duration-200 hover:opacity-70 focus:outline-none focus:underline"
-              onClick={(e) => handleNavigation(e)}
-            >
-              Strona główna
-            </a>
-
             {/* Dropdown container */}
             <div className="relative group">
               <a
@@ -116,11 +112,11 @@ export default function Navbar() {
             </div>
 
             <a
-              href="#about"
+              href="#oferta"
               className="transition-opacity duration-200 hover:opacity-70 focus:outline-none focus:underline"
               onClick={(e) => handleNavigation(e, "about")}
             >
-              O nas
+              Oferta
             </a>
             <a
               href="#contact"
@@ -129,12 +125,13 @@ export default function Navbar() {
             >
               Kontakt
             </a>
-            <a
+
+            {/* <a
               href="#"
               className="transition-opacity duration-200 hover:opacity-70 focus:outline-none focus:underline"
             >
               PL | ENG
-            </a>
+            </a> */}
           </div>
         </div>
 
@@ -154,20 +151,9 @@ export default function Navbar() {
         >
           <div className="max-w-[1200px] mx-auto px-8">
             <div className="flex flex-col gap-4 text-sm text-[#34302D] py-6">
-              <a
-                href="/"
-                className="hover:opacity-70 transition-opacity duration-200 focus:outline-none focus:underline"
-                onClick={(e) => {
-                  handleNavigation(e);
-                  closeMenu();
-                }}
-              >
-                Strona główna
-              </a>
-
               {/* Mobile dropdown */}
               <div className="space-y-3">
-                <div className="font-medium">Nasze oddziały</div>
+                <div className="font-medium">Co robimy</div>
                 <a
                   href="#"
                   className="block pl-4 transition-opacity duration-200 hover:opacity-70 focus:outline-none focus:underline"
@@ -191,14 +177,14 @@ export default function Navbar() {
               </div>
 
               <a
-                href="#about"
+                href="#oferta"
                 className="hover:opacity-70 transition-opacity duration-200 focus:outline-none focus:underline"
                 onClick={(e) => {
                   handleNavigation(e, "about");
                   closeMenu();
                 }}
               >
-                O nas
+                Oferta
               </a>
               <a
                 href="#contact"
@@ -210,13 +196,13 @@ export default function Navbar() {
               >
                 Kontakt
               </a>
-              <a
+              {/* <a
                 href="#"
                 className="hover:opacity-70 transition-opacity duration-200 focus:outline-none focus:underline"
                 onClick={closeMenu}
               >
                 PL | ENG
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
