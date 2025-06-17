@@ -27,7 +27,7 @@ export default function ContactSection() {
               <div className="flex items-center justify-between w-full text-[#34302D] text-lg md:text-xl font-normal mb-4">
                 <span className="font-light">Zadzwoń:</span>
                 <a href="tel:+48888921888" className="hover:underline">
-                  +48 888 888 888
+                  +48 884 921 333
                 </a>
               </div>
               {/* Connecting line under both contact rows */}
