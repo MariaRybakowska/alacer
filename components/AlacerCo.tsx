@@ -15,10 +15,10 @@ export default function AlacerCo() {
           style={{ minWidth: 0 }}
         >
           <span className="text-sm uppercase tracking-widest text-white/80 mb-2 font-semibold">
-            Projekty
+            Portfolio
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Alacer Projekty
+            Alacer Portfolio
           </h2>
           <p className="text-lg md:text-xl text-white/90 mb-8 max-w-md">
             Odkryj nasze realizacje w przestrzeniach publicznych i prywatnych

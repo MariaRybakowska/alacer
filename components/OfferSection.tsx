@@ -1,6 +1,9 @@
 export default function OfferSection() {
   return (
-    <section className="border-t border-[#4F382B] py-6 mt-24">
+    <section
+      id="oferta-section"
+      className="border-t border-[#4F382B] py-6 mt-24"
+    >
       <div className="xl:grid xl:grid-cols-12 xl:gap-8">
         <h2 className="text-2xl text-[#917E6E] uppercase mb-6 xl:mb-0 xl:col-span-3">
           Oferta

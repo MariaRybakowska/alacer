@@ -50,14 +50,11 @@ export default function Hero() {
         </div>
       </section>
       <section className="w-full flex justify-center items-center py-8 px-4">
-        <div className="max-w-3xl text-center text-[#4F382B] text-lg md:text-xl font-light">
-          Realizujemy projekty na terenie całego kraju od 2001 roku. Wieloletnie
-          doświadczenie produkcyjne oraz wiedza w zakresie technologii i
-          materiałów pozwala nam na tworzenie nowych, innowacyjnych rozwiązań w
-          każdym kolejnym projekcie. Nasze realizacje łączą funkcję z estetyką i
-          funkcjonalnością. Często zdarza się, że design utrudnia lub wręcz
-          uniemożliwia osiągnięcie założeń akustycznych, wtedy wkraczamy do
-          akcji...
+        <div className="max-w-4xl text-center text-[#4F382B] text-lg md:text-xl font-light">
+          Działamy w całej Polsce od 2001 roku. Łączymy wiedzę o technologii i
+          materiałach z doświadczeniem produkcyjnym, by tworzyć estetyczne i
+          funkcjonalne rozwiązania. Gdy design koliduje z akustyką – wkraczamy
+          do akcji.
         </div>
       </section>
     </>
