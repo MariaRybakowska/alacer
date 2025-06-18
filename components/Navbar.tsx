@@ -84,7 +84,7 @@ export default function Navbar() {
                         <span className="block text-xs text-[#917E6E] mb-1">
                           01
                         </span>
-                        <span className="block">Alacer projekty</span>
+                        <span className="block">Alacer portfolio</span>
                       </div>
                       <span className="text-[#4F382B]/60 opacity-0 -translate-x-2 transition-all duration-300 group-hover/item:opacity-100 group-hover/item:translate-x-0">
                         →
@@ -162,7 +162,7 @@ export default function Navbar() {
                     closeMenu();
                   }}
                 >
-                  Projects
+                  Portfolio
                 </a>
                 <a
                   href="#"
@@ -172,7 +172,7 @@ export default function Navbar() {
                     closeMenu();
                   }}
                 >
-                  Products
+                  Produkty
                 </a>
               </div>
 
