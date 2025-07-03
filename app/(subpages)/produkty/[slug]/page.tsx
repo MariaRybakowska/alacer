@@ -129,95 +129,105 @@ export default function ProductPage({ params }: Props) {
 
   if (!product) return null;
 
-  const renderSpecs = () => {
+  // Helper to render a label/value row with underline
+  const SpecRow = ({
+    label,
+    value,
+  }: {
+    label: string;
+    value: string | string[] | Record<string, string> | undefined;
+  }) => {
+    if (!value) return null;
+    if (Array.isArray(value)) {
+      return (
+        <div className="py-2 border-b border-[#e5e1dc] flex justify-between items-center">
+          <span className="text-[#a5a2a0]">{label}</span>
+          <span className="text-right">{value.join(", ")}</span>
+        </div>
+      );
+    }
+    if (typeof value === "object") {
+      return Object.entries(value).map(([k, v]) => (
+        <div
+          key={k}
+          className="py-2 border-b border-[#e5e1dc] flex justify-between items-center"
+        >
+          <span className="text-[#a5a2a0]">
+            {label} {k}
+          </span>
+          <span className="text-right">{v}</span>
+        </div>
+      ));
+    }
     return (
-      <div className="text-[#4F382B] space-y-6">
-        {/* Standard dimensions */}
-        <div>
-          <h2 className="text-[#a5a2a0] text-sm mb-2">
-            STANDARDOWE WYMIARY (mm)
-          </h2>
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <p className="font-medium text-lg">600 x 600</p>
-              <p className="font-medium text-lg">600 x 1200</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Perforation */}
-        <div>
-          <h2 className="text-[#a5a2a0] text-sm mb-2">PERFORACJA</h2>
-          <div>
-            <p className="text-lg">Standard: TAK</p>
-            <p className="text-lg">
-              Micro: {params.slug === "panel-metalowy" ? "NIE" : "TAK"}
-            </p>
-          </div>
-        </div>
-
-        {/* Finish */}
-        <div>
-          <h2 className="text-[#a5a2a0] text-sm mb-2">
-            {params.slug === "panel-laminowany" ? "WYKOŃCZENIA" : "WYKOŃCZENIE"}
-          </h2>
-          <div className="flex flex-col space-y-1">
-            {product.specs?.finishes?.map((finish, index) => (
-              <p key={index} className="font-medium text-lg">
-                {finish}
-              </p>
-            ))}
-          </div>
-        </div>
-
-        {/* PDF Button */}
-        <div className="pt-4">
-          <a
-            href="/pdf/specyfikacja.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-6 py-2 border border-[#917E6E] text-[#917E6E] hover:bg-[#917E6E] hover:text-white transition-colors"
-          >
-            POBIERZ SPECYFIKACJĘ
-          </a>
-        </div>
+      <div className="py-2 border-b border-[#e5e1dc] flex justify-between items-center">
+        <span className="text-[#a5a2a0]">{label}</span>
+        <span className="text-right">{value}</span>
       </div>
     );
   };
 
   return (
-    <main className="bg-white min-h-screen px-4 md:px-8">
-      <div className="max-w-[1400px] mx-auto h-[calc(100vh-70px)] my-8 flex flex-col">
+    <main className="bg-[#FFFCF5] min-h-screen pb-24">
+      <div className="max-w-[1100px] mx-auto pt-24 px-4 md:px-0">
         {/* Back button */}
         <Link
           href="/produkty"
-          className="inline-block mt-12 text-[#a5a2a0] hover:underline"
+          className="inline-block text-[#a5a2a0] hover:underline text-sm mb-8"
         >
-          POWRÓT DO PRODUKTÓW
+          ← Powrót do produktów
         </Link>
 
         {/* Main content */}
-        <div className="grid md:grid-cols-2 gap-8 items-start flex-grow my-8">
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           {/* Left column - Image */}
-          <div>
-            <div className="aspect-square bg-[#F5F5F5] h-full max-h-[70vh]">
+          <div className="flex flex-col gap-6">
+            <div
+              className="w-full aspect-square bg-[#F5F5F5] overflow-hidden"
+              style={{ borderRadius: 0 }}
+            >
               <img
                 src={product.image}
                 alt={product.title}
                 className="w-full h-full object-cover"
               />
             </div>
+            <a
+              href="/pdf/specyfikacja.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-3 border border-[#917E6E] text-[#917E6E] font-medium hover:bg-[#917E6E] hover:text-white transition-colors duration-200"
+              style={{ borderRadius: 0 }}
+            >
+              POBIERZ SPECYFIKACJĘ
+            </a>
           </div>
 
           {/* Right column - Product Info */}
-          <div>
-            <h1 className="text-4xl md:text-4xl text-[#917E6E] mb-8">
-              {product.title}
-            </h1>
-
-            {renderSpecs()}
+          <div className="flex flex-col gap-6">
+            <div className="mb-4">
+              <h1 className="text-4xl text-[#917E6E]">{product.title}</h1>
+            </div>
+            <div className="flex flex-col gap-0 text-[#4F382B] text-base min-w-[180px]">
+              <SpecRow
+                label="Standardowe wymiary"
+                value={product.specs?.standardDimensions}
+              />
+              <SpecRow
+                label="Maksymalne wymiary"
+                value={product.specs?.maxDimensions}
+              />
+              <SpecRow label="Grubość" value={product.specs?.thickness} />
+              <SpecRow label="Krawędź" value={product.specs?.edge} />
+              <SpecRow label="Perforacja" value={product.specs?.perforation} />
+              <SpecRow
+                label="Wymiary metalowe"
+                value={product.specs?.metalDimensions}
+              />
+              <SpecRow label="Wykończenie" value={product.specs?.finishes} />
+            </div>
           </div>
-        </div>
+        </section>
       </div>
     </main>
   );

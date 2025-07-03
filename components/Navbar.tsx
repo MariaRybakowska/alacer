@@ -154,26 +154,20 @@ export default function Navbar() {
               {/* Mobile dropdown */}
               <div className="space-y-3">
                 <div className="font-medium">Co robimy</div>
-                <a
-                  href="#"
+                <Link
+                  href="/projekty"
                   className="block pl-4 transition-opacity duration-200 hover:opacity-70 focus:outline-none focus:underline"
-                  onClick={(e) => {
-                    handleNavigation(e);
-                    closeMenu();
-                  }}
+                  onClick={closeMenu}
                 >
                   Portfolio
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  href="/produkty"
                   className="block pl-4 transition-opacity duration-200 hover:opacity-70 focus:outline-none focus:underline"
-                  onClick={(e) => {
-                    handleNavigation(e);
-                    closeMenu();
-                  }}
+                  onClick={closeMenu}
                 >
                   Produkty
-                </a>
+                </Link>
               </div>
 
               <a

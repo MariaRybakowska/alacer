@@ -5,7 +5,9 @@ type Project = {
   title: string;
   image: string;
   year: string;
-  area?: string;
+  location?: string;
+  architect?: string;
+  cooperation?: string;
   description: string;
   additionalImages?: Array<{
     src: string;
@@ -24,6 +26,9 @@ const PROJECTS: Record<string, Project> = {
     title: "Teatr im. Stefana Żeromskiego",
     image: "/projekty/zeromskiego.jpg",
     year: "2024",
+    location: "Kielce",
+    architect: "WXCA",
+    cooperation: "Pracownia Akustyki Kozłowski",
     description:
       "Realizacja zabudowy akustycznej z mosiądzu wg projektu architektonicznego WXCA oraz akustyki zaprojektowanej przez Pracownię Akustyki Kozłowski. Wykonanie unikatowego plafonu odbijającego nad widownią. Efekt wizualny osiągnięty dzięki zastosowaniu mosiężnej blachy młotkowanej, zamocowanej na konstrukcji stalowej, szczelnie wypełnionej, gwarantując odpowiednią masę. Zabudowa śluzy akustycznej panelami perforowanymi z blachy mosiężnej skutecznie i bardzo designersko spełniła akustyczne założenie projektu.",
     additionalImages: [
@@ -53,7 +58,7 @@ const PROJECTS: Record<string, Project> = {
     title: "Sala Koncertowo-bankietowa Pawelana",
     image: "/projekty/pabianice.jpg",
     year: "2023",
-    area: "300m²",
+    location: "Pabianice",
     description:
       "Zabudowa ścian sali koncertowo-bankietowej wg operatu akustycznego ustrojami akustycznymi z mikroperforacją.",
     additionalImages: [
@@ -80,6 +85,7 @@ const PROJECTS: Record<string, Project> = {
     title: "PINEA",
     image: "/projekty/Pobierowo/zabudowa-akustyczna.jpg",
     year: "2024",
+    location: "Pobierowo",
     description:
       "Realizacja zabudów w częściach wspólnych apartamentowca wg projektu pracowni ELD z Poznania. W realizacji wykorzystane zostały bardzo różnorodne materiały wykończeniowe: laminaty, drewno, płyty elewacyjne włóknowo-cementowe, tkanina, chrobotek oraz listwy oświetleniowe nadające dodatkowy efekt zabudowie.",
     additionalImages: [
@@ -101,6 +107,7 @@ const PROJECTS: Record<string, Project> = {
     title: "Warszawa Hotel PURO",
     image: "/projekty/puro/puro.jpg",
     year: "2025",
+    location: "Warszawa",
     description:
       "Zabudowa akustyczna sufitu w Bistro. Dzięki zastosowaniu mikroperforacji osiągnięty został pożądany efekt akustyczny i designerski zaprojektowany przez zespół projektowy Puro Hotels",
   },
@@ -112,79 +119,86 @@ export default function ProjectPage({ params }: Props) {
   if (!project) return null;
 
   return (
-    <main className="bg-white min-h-screen px-4 md:px-8 pb-24">
-      <div className="max-w-[1400px] mx-auto my-8">
-        {/* Back button */}
+    <main className="bg-[#F7F6F3] min-h-screen pb-24">
+      {/* Top Main Image (with margin for nav) */}
+      <div className="w-full max-w-[1100px] mx-auto pt-24 px-4 md:px-0">
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-auto object-cover mb-12"
+          style={{ maxHeight: 480, objectFit: "cover", borderRadius: 2 }}
+        />
+      </div>
+
+      {/* Go Back Button */}
+      <div className="w-full max-w-[1100px] mx-auto px-4 md:px-0 mb-8">
         <Link
           href="/projekty"
-          className="inline-block mt-12 text-[#a5a2a0] hover:underline"
+          className="inline-block text-[#a5a2a0] hover:underline text-sm mb-4"
         >
-          POWRÓT DO PROJEKTÓW
+          ← Powrót do projektów
         </Link>
-
-        {/* Main content */}
-        <div className="grid md:grid-cols-2 gap-8 items-start my-8">
-          {/* Left column - Image */}
-          <div>
-            <div className="aspect-square bg-[#F5F5F5] h-full max-h-[70vh]">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-
-          {/* Right column - Project Info */}
-          <div>
-            <h1 className="text-4xl md:text-4xl text-[#917E6E] mb-8">
-              {project.title}
-            </h1>
-
-            <div className="text-[#4F382B] space-y-6">
-              {/* Year */}
-              <div>
-                <h2 className="text-[#a5a2a0] text-sm mb-2">ROK</h2>
-                <p className="font-medium">{project.year}</p>
-              </div>
-
-              {/* Area */}
-              {project.area && (
-                <div>
-                  <h2 className="text-[#a5a2a0] text-sm mb-2">POWIERZCHNIA</h2>
-                  <p className="font-medium">{project.area}</p>
-                </div>
-              )}
-
-              {/* Description */}
-              <div>
-                <h2 className="text-[#a5a2a0] text-sm mb-2">OPIS</h2>
-                <p className="leading-relaxed text-lg">{project.description}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Additional Images Section */}
-        {project.additionalImages && project.additionalImages.length > 0 && (
-          <div className="mt-16">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {project.additionalImages.map((img, index) => (
-                <div key={index} className="space-y-2">
-                  <div className="aspect-square bg-[#F5F5F5] overflow-hidden">
-                    <img
-                      src={img.src}
-                      alt={img.description}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <p className="text-base text-[#917E6E]">{img.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
+
+      {/* Details & Description Section */}
+      <section className="w-full max-w-[1100px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 px-4 md:px-0 mb-16">
+        {/* Details (left) */}
+        <div className="md:col-span-1 flex flex-col gap-2 text-[#4F382B] text-base min-w-[180px]">
+          <div className="py-2 border-b border-[#e5e1dc] flex justify-between">
+            <span className="text-[#a5a2a0]">LOKALIZACJA</span>
+            <span>{project.location || "-"}</span>
+          </div>
+          <div className="py-2 border-b border-[#e5e1dc] flex justify-between">
+            <span className="text-[#a5a2a0]">PROJEKT</span>
+            <span>{project.title}</span>
+          </div>
+          <div className="py-2 border-b border-[#e5e1dc] flex justify-between">
+            <span className="text-[#a5a2a0]">ROK</span>
+            <span>{project.year}</span>
+          </div>
+          {project.architect && (
+            <div className="py-2 border-b border-[#e5e1dc] flex justify-between">
+              <span className="text-[#a5a2a0]">ARCHITEKT</span>
+              <span>{project.architect}</span>
+            </div>
+          )}
+          {project.cooperation && (
+            <div className="py-2 border-b border-[#e5e1dc] flex justify-between">
+              <span className="text-[#a5a2a0]">WSPÓŁPRACA</span>
+              <span>{project.cooperation}</span>
+            </div>
+          )}
+        </div>
+        {/* Description (right) */}
+        <div className="md:col-span-2 text-[#4F382B] text-base leading-relaxed">
+          {project.description}
+        </div>
+      </section>
+
+      {/* Gallery */}
+      {project.additionalImages && project.additionalImages.length > 0 && (
+        <section className="w-full max-w-[1100px] mx-auto px-4 md:px-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {project.additionalImages.map((img, idx) => (
+              <div key={idx} className="w-full flex flex-col">
+                <div
+                  className="w-full aspect-[3/4] bg-[#F5F5F5] overflow-hidden mb-2"
+                  style={{ borderRadius: 2 }}
+                >
+                  <img
+                    src={img.src}
+                    alt={img.description}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <span className="text-[#a5a2a0] text-xs">
+                  {img.description}
+                </span>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
     </main>
   );
 }

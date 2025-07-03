@@ -17,7 +17,7 @@ export default function Hero() {
         }}
       >
         {/* Overlay for better readability */}
-        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm z-0" />
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px] z-0" />
         <div className="max-w-[1200px] w-full flex flex-col items-center relative z-10 py-8">
           <img
             src="/main-page/logo-hero.svg"
@@ -29,7 +29,7 @@ export default function Hero() {
           </h1>
           <button
             onClick={scrollToContact}
-            className="flex items-center gap-2 px-8 py-3 rounded-full bg-white/30 backdrop-blur-md shadow-md text-white font-medium text-lg transition-all duration-200 hover:bg-white/40 border border-white/30 focus:outline-none focus:ring-2 focus:ring-white/40"
+            className="flex items-center gap-2 px-8 py-3 rounded-full bg-white/20 backdrop-blur-md shadow-md text-white font-small text-lg transition-all duration-200 hover:bg-white/40 border border-white/30 focus:outline-none focus:ring-2 focus:ring-white/40"
           >
             Skontaktuj się z nami
             <span className="ml-2 text-2xl">
