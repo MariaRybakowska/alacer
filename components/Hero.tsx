@@ -24,8 +24,9 @@ export default function Hero() {
             alt="logo"
             className="w-40 md:w-56 mb-2"
           />
-          <h1 className="text-xl md:text-2xl mb-6 mt-2 text-shadow text-center font-semibold leading-tight md:leading-tight">
-            Tworzymy lepsze przestrzenie akustyczne
+          <h1 className="text-xl mb-6 mt-2 text-shadow text-center font-light leading-tight md:leading-tight opacity-85">
+            Tworzymy piękne wykończenia ścian i sufitów. <br /> Nasze
+            specjalizacjie to akustyka i design.
           </h1>
           <button
             onClick={scrollToContact}
@@ -51,10 +52,10 @@ export default function Hero() {
       </section>
       <section className="w-full flex justify-center items-center py-8 px-4">
         <div className="max-w-4xl text-center text-[#4F382B] text-lg md:text-xl font-light">
-          Działamy w całej Polsce od 2001 roku. Łączymy wiedzę o technologii i
-          materiałach z doświadczeniem produkcyjnym, by tworzyć estetyczne i
-          funkcjonalne rozwiązania. Gdy design koliduje z akustyką – wkraczamy
-          do akcji.
+          Działamy w całej Polsce od 2001 roku. W projektach wykończeniowych
+          łączymy wiedzę o technologii i materiałach z doświadczeniem
+          produkcyjnym, by tworzyć estetyczne i funkcjonalne rozwiązania wnętrz.
+          Gdy design koliduje z akustyką - wkraczamy do akcji.
         </div>
       </section>
     </>

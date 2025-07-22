@@ -1,10 +1,10 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import AboutSection from "../components/AboutSection";
 import OfferSection from "../components/OfferSection";
 import ContactSection from "../components/ContactSection";
 import Footer from "../components/Footer";
 import AlacerCo from "../components/AlacerCo";
+import Nar from "../components/Nar";
 
 export default function Home() {
   return (
@@ -14,6 +14,7 @@ export default function Home() {
         <Hero />
         <AlacerCo />
         <OfferSection />
+        <Nar />
         <ContactSection />
         <Footer />
       </div>
