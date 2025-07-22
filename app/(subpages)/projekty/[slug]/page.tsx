@@ -33,24 +33,24 @@ const PROJECTS: Record<string, Project> = {
       "Realizacja zabudowy akustycznej z mosiądzu wg projektu architektonicznego WXCA oraz akustyki zaprojektowanej przez Pracownię Akustyki Kozłowski. Wykonanie unikatowego plafonu odbijającego nad widownią. Efekt wizualny osiągnięty dzięki zastosowaniu mosiężnej blachy młotkowanej, zamocowanej na konstrukcji stalowej, szczelnie wypełnionej, gwarantując odpowiednią masę. Zabudowa śluzy akustycznej panelami perforowanymi z blachy mosiężnej skutecznie i bardzo designersko spełniła akustyczne założenie projektu.",
     additionalImages: [
       {
-        src: "/projekty/Teatr im. Stefana Żeromskiego w Kielcach/plafon.jpg",
-        description: "plafon - ekran odbijający",
+        src: "/projekty/teatr-kielce/plafon.jpg",
+        description: "Plafon - ekran odbijający.",
       },
       {
-        src: "/projekty/Teatr im. Stefana Żeromskiego w Kielcach/blacha.jpg",
-        description: "blacha mosiężna, młotkowana",
+        src: "/projekty/teatr-kielce/blacha.jpg",
+        description: "Blacha mosiężna, młotkowana.",
       },
       {
-        src: "/projekty/Teatr im. Stefana Żeromskiego w Kielcach/sluza.jpg",
-        description: "śluza akustyczna",
+        src: "/projekty/teatr-kielce/sluza.jpg",
+        description: "Śluza akustyczna.",
       },
       {
-        src: "/projekty/Teatr im. Stefana Żeromskiego w Kielcach/panale.jpg",
-        description: "panele mosiężne perforowane",
+        src: "/projekty/teatr-kielce/panale.jpg",
+        description: "Panele mosiężne perforowane.",
       },
       {
-        src: "/projekty/Teatr im. Stefana Żeromskiego w Kielcach/reling.jpg",
-        description: "reling mosiężny, konsola mosiądzowana",
+        src: "/projekty/teatr-kielce/reling.jpg",
+        description: "Reling mosiężny, konsola mosiądzowana.",
       },
     ],
   },
@@ -63,20 +63,20 @@ const PROJECTS: Record<string, Project> = {
       "Zabudowa ścian sali koncertowo-bankietowej wg operatu akustycznego ustrojami akustycznymi z mikroperforacją.",
     additionalImages: [
       {
-        src: "/projekty/pabianice/rewizje.jpg",
-        description: "rewizje w panelach",
+        src: "/projekty/Pabianice/rewizje.jpg",
+        description: "Rewizje w panelach.",
       },
       {
-        src: "/projekty/pabianice/wykończenie.jpg",
-        description: "wykończenie narożnika",
+        src: "/projekty/Pabianice/wykończenie.jpg",
+        description: "Wykończenie narożnika.",
       },
       {
-        src: "/projekty/pabianice/sufit.jpg",
-        description: "sufit kasetonowy",
+        src: "/projekty/Pabianice/sufit.jpg",
+        description: "Sufit kasetonowy.",
       },
       {
-        src: "/projekty/pabianice/panele.jpg",
-        description: "panele perforowane -ustrój chłonący",
+        src: "/projekty/Pabianice/panele.jpg",
+        description: "Panele perforowane - ustrój chłonący.",
       },
     ],
   },
@@ -91,15 +91,15 @@ const PROJECTS: Record<string, Project> = {
     additionalImages: [
       {
         src: "/projekty/Pobierowo/zabudowa-akustyczna.jpg",
-        description: "zabudowa akustyczna w części restauracyjnej",
+        description: "Zabudowa akustyczna w części restauracyjnej.",
       },
       {
         src: "/projekty/Pobierowo/zabudowa-meblowa.jpg",
-        description: "zabudowa meblowa",
+        description: "Zabudowa meblowa.",
       },
       {
         src: "/projekty/Pobierowo/panele.jpg",
-        description: "panele ścienne",
+        description: "Panele ścienne.",
       },
     ],
   },
@@ -110,6 +110,24 @@ const PROJECTS: Record<string, Project> = {
     location: "Warszawa",
     description:
       "Zabudowa akustyczna sufitu w Bistro. Dzięki zastosowaniu mikroperforacji osiągnięty został pożądany efekt akustyczny i designerski zaprojektowany przez zespół projektowy Puro Hotels",
+    additionalImages: [
+      {
+        src: "/projekty/puro/puro-1.jpg",
+        description: "",
+      },
+      {
+        src: "/projekty/puro/puro-2.jpg",
+        description: "",
+      },
+      {
+        src: "/projekty/puro/puro-3.jpg",
+        description: "",
+      },
+      {
+        src: "/projekty/puro/puro-4.jpg",
+        description: "",
+      },
+    ],
   },
 };
 
@@ -150,7 +168,9 @@ export default function ProjectPage({ params }: Props) {
           </div>
           <div className="py-2 border-b border-[#e5e1dc] flex justify-between">
             <span className="text-[#a5a2a0]">PROJEKT</span>
-            <span>{project.title}</span>
+            <span className="text-right max-w-[60%] break-words">
+              {project.title}
+            </span>
           </div>
           <div className="py-2 border-b border-[#e5e1dc] flex justify-between">
             <span className="text-[#a5a2a0]">ROK</span>

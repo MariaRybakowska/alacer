@@ -29,7 +29,7 @@ export default function Hero() {
           </h1>
           <button
             onClick={scrollToContact}
-            className="flex items-center gap-2 px-8 py-3 rounded-full bg-white/20 backdrop-blur-md shadow-md text-white font-small text-lg transition-all duration-200 hover:bg-white/40 border border-white/30 focus:outline-none focus:ring-2 focus:ring-white/40"
+            className="flex items-center gap-2 px-8 py-3 rounded-full bg-white/10 backdrop-blur-sm shadow-md text-white font-small text-lg transition-all duration-200 hover:bg-white/40 border border-white/30 focus:outline-none focus:ring-2 focus:ring-white/40"
           >
             Skontaktuj się z nami
             <span className="ml-2 text-2xl">
