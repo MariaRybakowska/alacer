@@ -50,6 +50,12 @@ export default function Products() {
             slug="intarsja"
             type="product"
           />
+          <ProjectProductCard
+            image="/produkty/sufit-listwowy/hero.jpg"
+            title="Sufit listwowy"
+            slug="sufit-listwowy"
+            type="product"
+          />
         </div>
       </div>
     </main>
