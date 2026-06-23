@@ -51,7 +51,7 @@ export default function Products() {
             type="product"
           />
           <ProjectProductCard
-            image="/produkty/sufit-listwowy/placeholders/thumb.svg"
+            image="/produkty/sufit-listwowy/hero.jpg"
             title="Sufit listwowy"
             slug="sufit-listwowy"
             type="product"

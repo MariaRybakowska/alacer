@@ -8,12 +8,19 @@ export const NAV_SECTIONS = [
 
 export const IMAGE_BASE = "/produkty/sufit-listwowy";
 
-/** Lekkie placeholdery — podmień docelowymi plikami w tym samym folderze */
-export const PLACEHOLDERS = {
-  hero: `${IMAGE_BASE}/placeholders/hero.svg`,
-  photo: `${IMAGE_BASE}/placeholders/photo.svg`,
-  thumb: `${IMAGE_BASE}/placeholders/thumb.svg`,
+export const IMAGES = {
+  hero: `${IMAGE_BASE}/hero.jpg`,
+  card: `${IMAGE_BASE}/hero.jpg`,
+  detail1: `${IMAGE_BASE}/detail-1.jpg`,
+  detail2: `${IMAGE_BASE}/detail-2.jpg`,
+  mountCu: `${IMAGE_BASE}/mount-cu.jpg`,
+  mountNoniusz: `${IMAGE_BASE}/mount-noniusz.jpg`,
+  crossSection: `${IMAGE_BASE}/cross-section.jpg`,
+  wool: `${IMAGE_BASE}/wool.jpg`,
+  revision: `${IMAGE_BASE}/revision.jpg`,
 } as const;
+
+export const CATALOG_PDF = "/pdf/tip-top-katalog.pdf";
 
 export const FEATURES = [
   {
@@ -127,19 +134,19 @@ export const ACOUSTIC_CONFIGS: AcousticConfig[] = [
 
 export const SYSTEM_ELEMENTS = [
   {
-    image: PLACEHOLDERS.photo,
+    image: `${IMAGE_BASE}/element-profile.jpg`,
     title: "Profil główny TOP",
     description:
       "Stalowy profil nośny z zamkiem zatrzaskowym. Przyjmuje listwy TIP TOP bez narzędzi — każda listwa demontowalna niezależnie.",
   },
   {
-    image: PLACEHOLDERS.photo,
+    image: `${IMAGE_BASE}/element-zawiesie.jpg`,
     title: "Zawiesia WGN20 i WDN PG",
     description:
       "Zawiesie noniuszowe ze stali ocynkowanej DX51+Z. Regulacja wysokości w zakresie całej długości zawiesia.",
   },
   {
-    image: PLACEHOLDERS.photo,
+    image: `${IMAGE_BASE}/element-detal.jpg`,
     title: "Detal połączenia",
     description:
       "Zawiesie noniuszowe w złożeniu — widok mechanizmu blokady wysokości. Regulacja płynna, blokada przez ząbkowanie.",
@@ -148,25 +155,25 @@ export const SYSTEM_ELEMENTS = [
 
 export const MONTAZ_STEPS = [
   {
-    image: PLACEHOLDERS.photo,
+    image: `${IMAGE_BASE}/montaz-1.png`,
     title: "Pozycjonowanie listew od dołu",
     description:
       "Listwy TIP TOP wprowadzane są od dołu w kierunku profili głównych TOP. Każda listwa pozycjonowana niezależnie — możliwy dowolny rozstaw i szerokość szczeliny.",
   },
   {
-    image: PLACEHOLDERS.photo,
+    image: `${IMAGE_BASE}/montaz-2.png`,
     title: "Mocowanie śrubami metrycznymi M6",
     description:
       "Po wciśnięciu ku górze listwa przykręcana jest śrubami metrycznymi M6 do profilu TOP. Śruby zapewniają pewne połączenie, umożliwiając wielokrotny demontaż.",
   },
   {
-    image: PLACEHOLDERS.photo,
+    image: `${IMAGE_BASE}/montaz-3.png`,
     title: "Połać w trakcie montażu",
     description:
       "Widok przekrojowy połaci listwowej w trakcie zapełniania. Profile nośne CD60 zawieszone na zawiesiach noniuszowych wyznaczają płaszczyznę sufitu.",
   },
   {
-    image: PLACEHOLDERS.photo,
+    image: `${IMAGE_BASE}/montaz-4.png`,
     title: "Gotowa połać listwowa — widok od dołu",
     description:
       "Ukończona połać listwowa TIP TOP widoczna od strony wnętrza. Szczeliny między listwami zapewniają przezierność ≥ 30%.",
@@ -195,69 +202,70 @@ export const FINISHES = [
 ];
 
 export const VENEERS = [
-  { name: "Sosna Carolina", image: PLACEHOLDERS.thumb },
-  { name: "Brzoza Skandynawska", image: PLACEHOLDERS.thumb },
-  { name: "Buk Półflader", image: PLACEHOLDERS.thumb },
-  { name: "Buk Prostosłoisty", image: PLACEHOLDERS.thumb },
-  { name: "Dąb Flader", image: PLACEHOLDERS.thumb },
-  { name: "Dąb Półflader", image: PLACEHOLDERS.thumb },
-  { name: "Dąb Prostosłoisty", image: PLACEHOLDERS.thumb },
-  { name: "Jesion Biały Flader", image: PLACEHOLDERS.thumb },
-  { name: "Jesion Prostosłoisty", image: PLACEHOLDERS.thumb },
-  { name: "Olcha", image: PLACEHOLDERS.thumb },
-  { name: "Orzech Promień", image: PLACEHOLDERS.thumb },
+  { name: "Sosna Carolina", image: `${IMAGE_BASE}/veneer-sosna.png` },
+  { name: "Brzoza Skandynawska", image: `${IMAGE_BASE}/veneer-brzoza.png` },
+  { name: "Buk Półflader", image: `${IMAGE_BASE}/veneer-buk-pol.jpg` },
+  { name: "Buk Prostosłoisty", image: `${IMAGE_BASE}/veneer-buk-prost.jpg` },
+  { name: "Dąb Flader", image: `${IMAGE_BASE}/veneer-dab-flader.jpg` },
+  { name: "Dąb Półflader", image: `${IMAGE_BASE}/veneer-dab-pol.jpg` },
+  { name: "Dąb Prostosłoisty", image: `${IMAGE_BASE}/veneer-dab-prost.jpg` },
+  { name: "Jesion Biały Flader", image: `${IMAGE_BASE}/veneer-jesion-flader.jpg` },
+  { name: "Jesion Prostosłoisty", image: `${IMAGE_BASE}/veneer-jesion-prost.jpg` },
+  { name: "Olcha", image: `${IMAGE_BASE}/veneer-olcha.jpg` },
+  { name: "Orzech Promień", image: `${IMAGE_BASE}/veneer-orzech-promien.jpg` },
+  { name: "Orzech Amerykański", image: `${IMAGE_BASE}/veneer-orzech-amerykanski.png` },
 ];
 
 export const REALIZACJE = [
   {
-    image: PLACEHOLDERS.photo,
+    image: `${IMAGE_BASE}/realizacja-1.jpg`,
     location: "Komisje Sejmowe, Warszawa",
     description:
       "Sala konferencyjna — sufit listwowy fornirowany, listwy naturalne, światło dzienne",
   },
   {
-    image: PLACEHOLDERS.photo,
+    image: `${IMAGE_BASE}/realizacja-2.jpg`,
     location: "Centrum Franowo, Poznań",
     description:
       "Korytarz z sufitem listwowym TIP TOP — widok perspektywiczny, dwie kondygnacje",
   },
   {
-    image: PLACEHOLDERS.photo,
+    image: `${IMAGE_BASE}/realizacja-3.jpg`,
     location: "Detal — styk systemu listwowego",
     description:
       "Zbliżenie krawędzi połaci listwowej przy ścianie — widoczna czarna fizelina i profil TOP",
   },
   {
-    image: PLACEHOLDERS.photo,
+    image: `${IMAGE_BASE}/realizacja-4.jpg`,
     location: "Centrum Handlowe Franowo, Poznań",
     description:
       "Pasaż handlowy — sufit listwowy fornirowany z oświetleniem liniowym LED",
   },
   {
-    image: PLACEHOLDERS.photo,
+    image: `${IMAGE_BASE}/realizacja-5.jpg`,
     location: "Budynek biurowy",
     description:
       "Korytarz biurowy — sufit listwowy TIP TOP, listwy ciemny fornir orzechowy",
   },
   {
-    image: PLACEHOLDERS.photo,
+    image: `${IMAGE_BASE}/realizacja-6.jpg`,
     location: "Maraton Poznań — obiekt biurowy",
     description:
       "Wyspa sufitowa — sufit listwowy TIP TOP w formie wyspy nad strefą recepcji",
   },
   {
-    image: PLACEHOLDERS.photo,
+    image: `${IMAGE_BASE}/realizacja-7.jpg`,
     location: "Budynek Komisji Sejmowych, Warszawa",
     description: "Hol główny — sufit listwowy fornirowany, widok perspektywiczny",
   },
   {
-    image: PLACEHOLDERS.photo,
+    image: `${IMAGE_BASE}/realizacja-8.jpg`,
     location: "Budynek Komisji Sejmowych, Warszawa",
     description:
       "Korytarz komunikacyjny — sufit listwowy z oświetleniem liniowym LED",
   },
   {
-    image: PLACEHOLDERS.photo,
+    image: `${IMAGE_BASE}/realizacja-9.jpg`,
     location: "Budynek Komisji Sejmowych, Warszawa",
     description:
       "Klatka schodowa — sufit listwowy w przestrzeni wielokondygnacyjnej",

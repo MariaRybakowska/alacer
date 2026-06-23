@@ -10,7 +10,8 @@ import {
   type AcousticConfig,
   FEATURES,
   FINISHES,
-  PLACEHOLDERS,
+  IMAGES,
+  CATALOG_PDF,
   LISTWA_SPECS,
   MONTAZ_STEPS,
   NAV_SECTIONS,
@@ -38,14 +39,17 @@ function SectionTitle({ children }: { children: React.ReactNode }) {
 }
 
 function SpecTable({
-  title,
+  heading,
+  tableLabel,
   rows,
 }: {
-  title: string;
+  heading: string;
+  tableLabel: string;
   rows: { label: string; value: string }[];
 }) {
   return (
-    <div className="border border-[#E8E4DC] bg-white">
+    <div>
+      <h3 className="text-base font-semibold text-[#2C2820] mb-4">{heading}</h3>
       <table className="w-full text-sm border-collapse">
         <thead>
           <tr>
@@ -53,17 +57,17 @@ function SpecTable({
               colSpan={2}
               className="text-left px-3 py-2.5 bg-[#E8E4DC] text-[11px] font-semibold tracking-[0.08em] uppercase text-[#4F382B]"
             >
-              {title}
+              {tableLabel}
             </th>
           </tr>
         </thead>
         <tbody>
           {rows.map((row) => (
             <tr key={row.label} className="border-b border-[#E8E4DC] last:border-b-0">
-              <td className="px-3 py-2.5 text-[12.5px] text-alacer-secondary align-top w-[42%]">
+              <td className="px-3 py-3 text-[12.5px] text-[#9C978D] align-top w-[42%]">
                 {row.label}
               </td>
-              <td className="px-3 py-2.5 text-[13px] font-medium text-[#2C2820] align-top">
+              <td className="px-3 py-3 text-[13px] font-semibold text-[#2C2820] align-top">
                 {row.value}
               </td>
             </tr>
@@ -95,18 +99,18 @@ function SpecHighlight({ children }: { children: React.ReactNode }) {
 function AcousticConfigCard({ config }: { config: AcousticConfig }) {
   return (
     <div className="border border-[#E8E4DC] bg-white">
-      <div className="px-5 py-4 border-b border-[#E8E4DC] bg-white">
+      <div className="px-5 pt-[18px] pb-3.5 border-b border-[#E8E4DC]">
         <div className="flex items-center gap-2.5 mb-1">
-          <span className="text-[10px] font-bold tracking-[0.12em] text-alacer-primary bg-alacer-bg border border-[#E8E4DC] px-2 py-0.5">
+          <span className="text-[10px] font-bold tracking-[0.12em] text-alacer-primary bg-alacer-bg px-2 py-0.5">
             {config.id}
           </span>
           <h4 className="text-[13.5px] font-semibold text-[#2C2820] leading-snug">
             {config.title}
           </h4>
         </div>
-        <p className="text-[11px] text-alacer-secondary tracking-wide">{config.subtitle}</p>
+        <p className="text-[11px] text-[#9C978D] tracking-wide">{config.subtitle}</p>
       </div>
-      <table className="w-full text-xs border-collapse">
+      <table className="w-full text-[12px] border-collapse">
         <tbody>
           {config.rows.map((row, i) => (
             <tr
@@ -116,13 +120,13 @@ function AcousticConfigCard({ config }: { config: AcousticConfig }) {
                 i % 2 === 0 ? "bg-alacer-bg" : "bg-white"
               )}
             >
-              <td className="px-3 py-2 text-alacer-secondary">{row.label}</td>
+              <td className="px-3 py-2.5 text-[#9C978D]">{row.label}</td>
               <td
                 className={cn(
-                  "px-3 py-2 text-right",
+                  "px-3 py-2.5 text-right",
                   row.highlight
                     ? "font-semibold text-[#2C2820]"
-                    : "font-medium text-alacer-text"
+                    : "font-medium text-[#2C2820]"
                 )}
               >
                 {row.value}
@@ -137,6 +141,25 @@ function AcousticConfigCard({ config }: { config: AcousticConfig }) {
 
 function SectionRule() {
   return <div className="w-12 h-px bg-[#E8E4DC] mb-8" />;
+}
+
+function CatalogDownloadButton({ variant = "light" }: { variant?: "light" | "dark" }) {
+  return (
+    <a
+      href={CATALOG_PDF}
+      target="_blank"
+      rel="noopener noreferrer"
+      download
+      className={cn(
+        "inline-block px-8 py-3 text-sm font-medium tracking-wide uppercase transition-colors duration-200",
+        variant === "light"
+          ? "border border-white/40 text-white bg-white/10 backdrop-blur-sm hover:bg-white/25"
+          : "border border-alacer-secondary text-alacer-secondary hover:bg-alacer-secondary hover:text-white"
+      )}
+    >
+      Pobierz katalog TIP TOP
+    </a>
+  );
 }
 
 function CatalogImage({
@@ -166,7 +189,7 @@ function CatalogImage({
         width={aspect === "auto" ? 800 : undefined}
         height={aspect === "auto" ? 600 : undefined}
         className={cn(
-          aspect === "auto" ? "w-full h-auto object-contain" : "object-contain p-4"
+          aspect === "auto" ? "w-full h-auto object-cover" : "object-cover"
         )}
         sizes="(max-width: 768px) 100vw, 50vw"
       />
@@ -204,7 +227,7 @@ export default function SufitListwowyPage() {
       <section className="relative flex flex-col items-center justify-center text-white mt-[70px] mb-8 px-8 min-h-[60vh] overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src={PLACEHOLDERS.hero}
+            src={IMAGES.hero}
             alt="Akustyczny sufit listwowy TIP TOP — realizacja Budynek Komisji Sejmowych, Warszawa"
             fill
             priority
@@ -225,13 +248,14 @@ export default function SufitListwowyPage() {
             Akustyczny sufit listwowy
           </p>
           <div className="w-10 h-px bg-white/50 mb-6" />
-          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[11px] font-medium tracking-[0.12em] uppercase text-white/70">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[11px] font-medium tracking-[0.12em] uppercase text-white/70 mb-8">
             <span>MDF · Fornir · Drewno</span>
             <span className="hidden sm:inline text-white/30">|</span>
             <span>Przezierność ≥ 30%</span>
             <span className="hidden sm:inline text-white/30">|</span>
             <span>Klasa pochłaniania A</span>
           </div>
+          <CatalogDownloadButton variant="light" />
         </div>
 
         <p className="absolute bottom-4 right-6 md:right-10 text-[10px] text-white/40 tracking-wide z-10">
@@ -255,6 +279,10 @@ export default function SufitListwowyPage() {
             w systemie TOP
           </SectionTitle>
           <SectionRule />
+
+          <div className="mb-10">
+            <CatalogDownloadButton variant="dark" />
+          </div>
 
           <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
             <div>
@@ -286,14 +314,22 @@ export default function SufitListwowyPage() {
               </div>
             </div>
             <div className="space-y-3">
-              <CatalogImage src={PLACEHOLDERS.photo} alt="Detal listwy TIP TOP" aspect="video" />
-              <CatalogImage src={PLACEHOLDERS.photo} alt="Zbliżenie połaci listwowej" aspect="video" />
+              <CatalogImage src={IMAGES.detail1} alt="Detal listwy TIP TOP" aspect="video" />
+              <CatalogImage src={IMAGES.detail2} alt="Zbliżenie połaci listwowej" aspect="video" />
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 mt-14 pt-14 border-t border-[#E8E4DC]">
-            <SpecTable title="Listwa" rows={LISTWA_SPECS} />
-            <SpecTable title="System nośny" rows={TOP_SPECS} />
+          <div className="grid md:grid-cols-2 gap-10 mt-14 pt-14 border-t border-[#E8E4DC]">
+            <SpecTable
+              heading="Parametry techniczne"
+              tableLabel="Listwa"
+              rows={LISTWA_SPECS}
+            />
+            <SpecTable
+              heading="Podkonstrukcja TOP"
+              tableLabel="System nośny"
+              rows={TOP_SPECS}
+            />
           </div>
         </section>
 
@@ -400,7 +436,7 @@ export default function SufitListwowyPage() {
             </div>
             <div>
               <CatalogImage
-                src={PLACEHOLDERS.photo}
+                src={IMAGES.mountCu}
                 alt="Widok 3D — profil TOP na konstrukcji C-U z zawiesiami noniuszowymi"
                 aspect="video"
               />
@@ -411,7 +447,7 @@ export default function SufitListwowyPage() {
           <div className="grid md:grid-cols-2 gap-10 md:gap-12 items-start mb-14 pb-14 border-b border-alacer-primary/10">
             <div className="order-2 md:order-1">
               <CatalogImage
-                src={PLACEHOLDERS.photo}
+                src={IMAGES.mountNoniusz}
                 alt="Widok 3D — profile TOP zawieszone bezpośrednio na zawiesiach noniuszowych"
                 aspect="video"
               />
@@ -459,7 +495,7 @@ export default function SufitListwowyPage() {
                 Przekrój systemu — profil główny TOP
               </h3>
               <CatalogImage
-                src={PLACEHOLDERS.photo}
+                src={IMAGES.crossSection}
                 alt="Przekrój profilu głównego TOP"
                 aspect="video"
               />
@@ -469,7 +505,7 @@ export default function SufitListwowyPage() {
                 Wełna mineralna w systemie TOP
               </h3>
               <CatalogImage
-                src={PLACEHOLDERS.photo}
+                src={IMAGES.wool}
                 alt="Wełna mineralna w systemie TOP"
                 aspect="video"
               />
@@ -498,7 +534,7 @@ export default function SufitListwowyPage() {
               </div>
             </div>
             <CatalogImage
-              src={PLACEHOLDERS.photo}
+              src={IMAGES.revision}
               alt="Systemowy otwór rewizyjny"
               aspect="video"
             />
@@ -567,7 +603,7 @@ export default function SufitListwowyPage() {
             {VENEERS.map((v) => (
               <div key={v.name} className="border border-[#E8E4DC] bg-white overflow-hidden">
                 <div className="relative aspect-[4/3]">
-                  <Image src={v.image} alt={v.name} fill className="object-contain p-2" sizes="200px" />
+                  <Image src={v.image} alt={v.name} fill className="object-cover" sizes="200px" />
                 </div>
                 <p className="text-xs font-medium text-[#2C2820] text-center py-2.5 px-2">{v.name}</p>
               </div>
@@ -599,7 +635,7 @@ export default function SufitListwowyPage() {
             {REALIZACJE.map((r) => (
               <div key={r.location + r.description} className="bg-white">
                 <div className="relative aspect-[3/2]">
-                  <Image src={r.image} alt={r.description} fill className="object-contain p-2" sizes="400px" />
+                  <Image src={r.image} alt={r.description} fill className="object-cover" sizes="400px" />
                 </div>
                 <div className="p-4">
                   <p className="text-[11px] font-semibold tracking-wide uppercase text-[#4F382B] mb-1.5">
