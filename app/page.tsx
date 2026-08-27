@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
+import Rt60Section from "../components/Rt60Section";
 import OfferSection from "../components/OfferSection";
 import ContactSection from "../components/ContactSection";
 import Footer from "../components/Footer";
@@ -58,6 +59,7 @@ export default function Home() {
       <Navbar />
       <div className="max-w-[100%] mx-auto px-4 md:px-8">
         <Hero />
+        <Rt60Section />
         <AlacerCo />
         <OfferSection />
         <Nar />

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
+import { RT60_URL } from "@/lib/rt60";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,7 +44,7 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-5 backdrop-blur-sm">
       <div className="max-w-[100%] mx-auto px-4 md:px-8">
-        <div className="flex items-center justify-between py-6">
+        <div className="flex items-center justify-between py-6 relative z-20">
           <Link href="/">
             <Image src="/logo.png" alt="Alacer Logo" width={77} height={24} />
           </Link>
@@ -126,31 +127,39 @@ export default function Navbar() {
               Kontakt
             </a>
 
-            {/* <a
-              href="#"
-              className="transition-opacity duration-200 hover:opacity-70 focus:outline-none focus:underline"
+            <a
+              href={RT60_URL}
+              className="whitespace-nowrap font-medium text-[#4F382B] transition-opacity duration-200 hover:opacity-70 focus:outline-none focus:underline"
             >
-              PL | ENG
-            </a> */}
+              Zbadaj pomieszczenie →
+            </a>
           </div>
         </div>
 
         {/* Mobile menu overlay */}
         {isMenuOpen && (
           <div
-            className="fixed inset-0 bg-black bg-opacity-50 lg:hidden"
+            className="fixed inset-0 bg-black bg-opacity-50 lg:hidden z-10"
             onClick={closeMenu}
           />
         )}
 
         {/* Mobile menu */}
         <div
-          className={`lg:hidden fixed left-0 right-0 top-[78px] bg-white transform transition-transform duration-300 ease-in-out ${
+          className={`lg:hidden fixed left-0 right-0 top-[78px] z-20 bg-white transform transition-transform duration-300 ease-in-out ${
             isMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
           <div className="max-w-[1200px] mx-auto px-8">
             <div className="flex flex-col gap-4 text-sm text-[#34302D] py-6">
+              <a
+                href={RT60_URL}
+                className="font-medium text-[#4F382B] hover:opacity-70 transition-opacity duration-200 focus:outline-none focus:underline"
+                onClick={closeMenu}
+              >
+                Zbadaj pomieszczenie →
+              </a>
+
               {/* Mobile dropdown */}
               <div className="space-y-3">
                 <div className="font-medium">Co robimy</div>
